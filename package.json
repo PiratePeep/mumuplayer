@@ -1,6 +1,6 @@
 {
   "name": "mumuplayer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "TypeScript wrapper for MuMu Player's MuMuManager CLI",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -37,6 +37,14 @@
     "mumu-player",
     "netease"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PiratePeep/mumuplayer.git"
+  },
+  "homepage": "https://github.com/PiratePeep/mumuplayer",
+  "bugs": {
+    "url": "https://github.com/PiratePeep/mumuplayer/issues"
+  },
   "license": "Unlicense",
   "engines": {
     "node": ">=18"
