@@ -140,6 +140,8 @@ export class MumuPlayer {
    * Verify that the MuMuManager.exe executable exists on disk.
    *
    * @throws {@link MuMuNotFoundError} When the executable is not found at the configured path.
+   *
+   * @category Advanced
    */
   async assertExists(): Promise<void> {
     try {
@@ -148,10 +150,6 @@ export class MumuPlayer {
       throw new MuMuNotFoundError(this.mumuPath);
     }
   }
-
-  // -----------------------------------------------------------------------
-  // Internal exec helper
-  // -----------------------------------------------------------------------
 
   private async exec(
     args: string[],
@@ -226,19 +224,19 @@ export class MumuPlayer {
    * const result = await mumu.rawExec(["version"]);
    * console.log(result.stdout);
    * ```
+   *
+   * @category Advanced
    */
   async rawExec(args: string[]): Promise<MuMuExecResult> {
     return this.exec(args);
   }
 
-  // -----------------------------------------------------------------------
-  // Top-level commands
-  // -----------------------------------------------------------------------
-
   /**
    * Get the MuMu Player version string.
    *
    * @returns The version string reported by MuMuManager.
+   *
+   * @category Lifecycle
    */
   async version(): Promise<string> {
     return this.execStdout(["version"]);
@@ -261,6 +259,8 @@ export class MumuPlayer {
    * const [player] = await mumu.getInfo(0);
    * console.log(player.name, player.player_state);
    * ```
+   *
+   * @category Lifecycle
    */
   async getInfo(vmindex: VmIndex = "all"): Promise<MuMuPlayerInfo[]> {
     const args = ["info", "--vmindex", normalizeVmIndex(vmindex)];
@@ -291,6 +291,8 @@ export class MumuPlayer {
    *   console.log(`Player ${r.index}: ${r.errcode === 0 ? "ok" : r.errmsg}`);
    * }
    * ```
+   *
+   * @category Lifecycle
    */
   async create(options: CreateOptions = {}): Promise<MuMuCommandResult[]> {
     const args = ["create"];
@@ -312,6 +314,8 @@ export class MumuPlayer {
    * @param vmindex - Index of the player to clone.
    * @param options - Clone options. See {@link CloneOptions}.
    * @returns Array of results, one per cloned player, with the assigned index and error status.
+   *
+   * @category Lifecycle
    */
   async clone(vmindex: VmIndex, options: CloneOptions = {}): Promise<MuMuCommandResult[]> {
     if (typeof vmindex === "number") {
@@ -335,6 +339,8 @@ export class MumuPlayer {
    *
    * @param vmindex - Which player(s) to delete.
    * @returns Array of results, one per deleted player, with error status.
+   *
+   * @category Lifecycle
    */
   async delete(vmindex: VmIndex): Promise<MuMuCommandResult[]> {
     return this.execCommandResult(["delete", "--vmindex", normalizeVmIndex(vmindex)], vmindex);
@@ -348,6 +354,8 @@ export class MumuPlayer {
    * @param name - The new display name.
    * @returns Raw command output.
    * @throws {@link MuMuError} If the player is currently running.
+   *
+   * @category Lifecycle
    */
   async rename(vmindex: number, name: string): Promise<string> {
     const [info] = await this.getInfo(vmindex);
@@ -372,6 +380,8 @@ export class MumuPlayer {
    * @param path - Path to the `.mumudata` file.
    * @param options - Import options. See {@link ImportOptions}.
    * @returns Raw command output.
+   *
+   * @category Lifecycle
    */
   async importData(
     path: string,
@@ -396,6 +406,8 @@ export class MumuPlayer {
    * // Export player 0 as a compressed file
    * await mumu.exportData(0, { dir: "C:\\backups", zip: true });
    * ```
+   *
+   * @category Lifecycle
    */
   async exportData(
     vmindex: VmIndex,
@@ -427,6 +439,8 @@ export class MumuPlayer {
    * @param options - Sort options.
    * @param options.ignoreHang - Kill the command after 3s to avoid hangs. Defaults to `true`.
    * @returns Raw command output (may be empty if the command was killed).
+   *
+   * @category Lifecycle
    */
   async sort(options: { ignoreHang?: boolean } = {}): Promise<string> {
     const { ignoreHang = true } = options;
@@ -436,10 +450,6 @@ export class MumuPlayer {
     );
     return stdout;
   }
-
-  // -----------------------------------------------------------------------
-  // Polling / Wait helpers
-  // -----------------------------------------------------------------------
 
   /**
    * Wait until a player's Android OS has finished booting.
@@ -458,6 +468,8 @@ export class MumuPlayer {
    * const info = await mumu.waitForBoot(0, { timeout: 60_000 });
    * console.log("Booted!", info.adb_port);
    * ```
+   *
+   * @category Waiting
    */
   async waitForBoot(
     vmindex: number,
@@ -493,6 +505,8 @@ export class MumuPlayer {
    * await mumu.waitForShutdown(0);
    * console.log("Player 0 is fully stopped.");
    * ```
+   *
+   * @category Waiting
    */
   async waitForShutdown(
     vmindex: number,
@@ -526,6 +540,8 @@ export class MumuPlayer {
    * });
    * console.log(`Player 0 ready on ADB port ${info.adb_port}`);
    * ```
+   *
+   * @category Waiting
    */
   async launchAndWait(
     vmindex: number,
@@ -550,6 +566,8 @@ export class MumuPlayer {
    * const info = await mumu.restartAndWait(0);
    * console.log("Restarted and ready!");
    * ```
+   *
+   * @category Waiting
    */
   async restartAndWait(
     vmindex: number,
@@ -558,10 +576,6 @@ export class MumuPlayer {
     await this.restart(vmindex);
     return this.waitForBoot(vmindex, options);
   }
-
-  // -----------------------------------------------------------------------
-  // State query helpers
-  // -----------------------------------------------------------------------
 
   /**
    * Check if a player's process is currently running.
@@ -575,6 +589,8 @@ export class MumuPlayer {
    *   console.log("Player 0 is running");
    * }
    * ```
+   *
+   * @category State
    */
   async isRunning(vmindex: number): Promise<boolean> {
     const [info] = await this.getInfo(vmindex);
@@ -593,6 +609,8 @@ export class MumuPlayer {
    *   console.log("Android is booted on player 0");
    * }
    * ```
+   *
+   * @category State
    */
   async isAndroidReady(vmindex: number): Promise<boolean> {
     const [info] = await this.getInfo(vmindex);
@@ -609,6 +627,8 @@ export class MumuPlayer {
    * const running = await mumu.getRunningPlayers();
    * console.log(`${running.length} players are running`);
    * ```
+   *
+   * @category State
    */
   async getRunningPlayers(): Promise<MuMuPlayerRunningInfo[]> {
     const all = await this.getInfo("all");
@@ -627,6 +647,8 @@ export class MumuPlayer {
    * const stopped = await mumu.getStoppedPlayers();
    * console.log(`${stopped.length} players are stopped`);
    * ```
+   *
+   * @category State
    */
   async getStoppedPlayers(): Promise<MuMuPlayerBaseInfo[]> {
     const all = await this.getInfo("all");
@@ -648,6 +670,8 @@ export class MumuPlayer {
    *   console.log(`Found at index ${player.index}`);
    * }
    * ```
+   *
+   * @category State
    */
   async getPlayerByName(name: string): Promise<MuMuPlayerInfo | undefined> {
     const all = await this.getInfo("all");
@@ -664,15 +688,13 @@ export class MumuPlayer {
    * const count = await mumu.getPlayerCount();
    * console.log(`${count} total players`);
    * ```
+   *
+   * @category State
    */
   async getPlayerCount(): Promise<number> {
     const all = await this.getInfo("all");
     return all.length;
   }
-
-  // -----------------------------------------------------------------------
-  // Control commands
-  // -----------------------------------------------------------------------
 
   /**
    * Launch player(s), optionally auto-launching an app by package name.
@@ -692,6 +714,8 @@ export class MumuPlayer {
    * // Launch all players
    * await mumu.launch("all");
    * ```
+   *
+   * @category Window Control
    */
   async launch(
     vmindex: VmIndex,
@@ -714,6 +738,8 @@ export class MumuPlayer {
    *
    * @param vmindex - Which player(s) to shut down.
    * @returns Array of results with error status per player.
+   *
+   * @category Window Control
    */
   async shutdown(vmindex: VmIndex): Promise<MuMuCommandResult[]> {
     return this.execCommandResult([
@@ -729,6 +755,8 @@ export class MumuPlayer {
    *
    * @param vmindex - Which player(s) to restart.
    * @returns Array of results with error status per player.
+   *
+   * @category Window Control
    */
   async restart(vmindex: VmIndex): Promise<MuMuCommandResult[]> {
     return this.execCommandResult([
@@ -748,6 +776,8 @@ export class MumuPlayer {
    * @param vmindex - Which player to show (single index only).
    * @returns Result with error status.
    * @throws {@link MuMuError} If the player is not running.
+   *
+   * @category Window Control
    */
   async showWindow(vmindex: number): Promise<MuMuCommandResult[]> {
     const [info] = await this.getInfo(vmindex);
@@ -773,6 +803,8 @@ export class MumuPlayer {
    * @param vmindex - Which player to hide (single index only).
    * @returns Result with error status.
    * @throws {@link MuMuError} If the player is not running.
+   *
+   * @category Window Control
    */
   async hideWindow(vmindex: number): Promise<MuMuCommandResult[]> {
     const [info] = await this.getInfo(vmindex);
@@ -806,6 +838,8 @@ export class MumuPlayer {
    *   sizeH: 600,
    * });
    * ```
+   *
+   * @category Window Control
    */
   async layoutWindow(
     vmindex: VmIndex,
@@ -827,10 +861,6 @@ export class MumuPlayer {
     return JSON.parse(raw) as LayoutWindowResult;
   }
 
-  // -----------------------------------------------------------------------
-  // Control > App commands
-  // -----------------------------------------------------------------------
-
   /**
    * Install an APK/APKS/XAPK file on player(s).
    *
@@ -842,6 +872,8 @@ export class MumuPlayer {
    * ```ts
    * await mumu.appInstall(0, "C:\\Downloads\\myapp.apk");
    * ```
+   *
+   * @category Apps
    */
   async appInstall(vmindex: VmIndex, apkPath: string): Promise<string> {
     return this.execStdout([
@@ -861,6 +893,8 @@ export class MumuPlayer {
    * @param vmindex - Which player(s) to uninstall from.
    * @param packageId - The app's package bundle ID (e.g. `"com.example.app"`).
    * @returns Raw command output.
+   *
+   * @category Apps
    */
   async appUninstall(vmindex: VmIndex, packageId: string): Promise<string> {
     return this.execStdout([
@@ -880,6 +914,8 @@ export class MumuPlayer {
    * @param vmindex - Which player(s) to launch the app on.
    * @param packageId - The app's package bundle ID.
    * @returns Raw command output.
+   *
+   * @category Apps
    */
   async appLaunch(vmindex: VmIndex, packageId: string): Promise<string> {
     return this.execStdout([
@@ -899,6 +935,8 @@ export class MumuPlayer {
    * @param vmindex - Which player(s) to close the app on.
    * @param packageId - The app's package bundle ID.
    * @returns Raw command output.
+   *
+   * @category Apps
    */
   async appClose(vmindex: VmIndex, packageId: string): Promise<string> {
     return this.execStdout([
@@ -935,6 +973,8 @@ export class MumuPlayer {
    * const result = await mumu.appInfo(0, { package: "com.example.app" });
    * // => '{ "state": "running" }' or '{ "state": "not_installed" }'
    * ```
+   *
+   * @category Apps
    */
   async appInfo(
     vmindex: VmIndex,
@@ -968,6 +1008,8 @@ export class MumuPlayer {
    *   console.log("Play Store is installed");
    * }
    * ```
+   *
+   * @category Apps
    */
   async isAppInstalled(vmindex: number, packageId: string): Promise<boolean> {
     const result = await this.shell(vmindex, `pm path ${packageId}`);
@@ -987,6 +1029,8 @@ export class MumuPlayer {
    * const apps = await mumu.listInstalledApps(0);
    * console.log(apps); // ["com.android.vending", "com.android.settings", ...]
    * ```
+   *
+   * @category Apps
    */
   async listInstalledApps(vmindex: number): Promise<string[]> {
     const result = await this.shell(vmindex, "pm list packages");
@@ -995,10 +1039,6 @@ export class MumuPlayer {
       .map((line) => line.replace("package:", "").trim())
       .filter(Boolean);
   }
-
-  // -----------------------------------------------------------------------
-  // Control > Tool commands
-  // -----------------------------------------------------------------------
 
   /**
    * Trigger a toolbar function on player(s).
@@ -1018,6 +1058,8 @@ export class MumuPlayer {
    * // Go home
    * await mumu.toolFunc(0, "go_home");
    * ```
+   *
+   * @category Tools
    */
   async toolFunc(vmindex: VmIndex, name: ToolFuncName): Promise<MuMuCommandResult[]> {
     return this.execCommandResult([
@@ -1052,6 +1094,8 @@ export class MumuPlayer {
    * // Press the back button
    * await mumu.toolCmd(0, { cmd: "input keyevent 4" });
    * ```
+   *
+   * @category Tools
    */
   async toolCmd(
     vmindex: VmIndex,
@@ -1075,6 +1119,8 @@ export class MumuPlayer {
    * @param vmindex - Which player(s) to throttle.
    * @param cap - CPU cap percentage, must be between 1 and 100.
    * @returns Result with error status per player.
+   *
+   * @category Tools
    */
   async toolDowncpu(vmindex: VmIndex, cap: number): Promise<MuMuCommandResult[]> {
     return this.execCommandResult([
@@ -1101,6 +1147,8 @@ export class MumuPlayer {
    * // Set location to San Francisco
    * await mumu.toolLocation(0, -122.4194, 37.7749);
    * ```
+   *
+   * @category Tools
    */
   async toolLocation(
     vmindex: VmIndex,
@@ -1128,6 +1176,8 @@ export class MumuPlayer {
    * @param y - Y-axis gravity value.
    * @param z - Z-axis gravity value.
    * @returns Result with error status per player.
+   *
+   * @category Tools
    */
   async toolGyro(
     vmindex: VmIndex,
@@ -1150,10 +1200,6 @@ export class MumuPlayer {
     ], vmindex);
   }
 
-  // -----------------------------------------------------------------------
-  // Input simulation helpers
-  // -----------------------------------------------------------------------
-
   /**
    * Tap at a screen coordinate.
    *
@@ -1166,6 +1212,8 @@ export class MumuPlayer {
    * ```ts
    * await mumu.tap(0, 400, 300);
    * ```
+   *
+   * @category Input
    */
   async tap(vmindex: VmIndex, x: number, y: number): Promise<string> {
     return this.toolCmd(vmindex, { cmd: `input tap ${x} ${y}` });
@@ -1187,6 +1235,8 @@ export class MumuPlayer {
    * // Swipe right
    * await mumu.swipe(0, 100, 500, 600, 500, 200);
    * ```
+   *
+   * @category Input
    */
   async swipe(
     vmindex: VmIndex,
@@ -1216,6 +1266,8 @@ export class MumuPlayer {
    * ```ts
    * await mumu.longPress(0, 400, 300, 2000);
    * ```
+   *
+   * @category Input
    */
   async longPress(
     vmindex: VmIndex,
@@ -1239,6 +1291,8 @@ export class MumuPlayer {
    * ```ts
    * await mumu.inputText(0, "hello world");
    * ```
+   *
+   * @category Input
    */
   async inputText(vmindex: VmIndex, text: string): Promise<string> {
     return this.toolCmd(vmindex, { cmd: "input_text", text });
@@ -1256,6 +1310,8 @@ export class MumuPlayer {
    * // Press the back button (keycode 4)
    * await mumu.keyEvent(0, 4);
    * ```
+   *
+   * @category Input
    */
   async keyEvent(vmindex: VmIndex, keyCode: number): Promise<string> {
     return this.toolCmd(vmindex, { cmd: `input keyevent ${keyCode}` });
@@ -1266,6 +1322,8 @@ export class MumuPlayer {
    *
    * @param vmindex - Which player(s) to target.
    * @returns Raw command output.
+   *
+   * @category Input
    */
   async pressBack(vmindex: VmIndex): Promise<string> {
     return this.keyEvent(vmindex, 4);
@@ -1276,14 +1334,12 @@ export class MumuPlayer {
    *
    * @param vmindex - Which player(s) to target.
    * @returns Result with error status.
+   *
+   * @category Input
    */
   async pressHome(vmindex: VmIndex): Promise<MuMuCommandResult[]> {
     return this.toolFunc(vmindex, "go_home");
   }
-
-  // -----------------------------------------------------------------------
-  // Control > Shortcut commands
-  // -----------------------------------------------------------------------
 
   /**
    * Create a desktop shortcut for a player.
@@ -1291,6 +1347,8 @@ export class MumuPlayer {
    * @param vmindex - Which player(s) to create a shortcut for.
    * @param options - Shortcut options. See {@link ShortcutCreateOptions}.
    * @returns Result with error status per player.
+   *
+   * @category Shortcuts
    */
   async shortcutCreate(
     vmindex: VmIndex,
@@ -1314,6 +1372,8 @@ export class MumuPlayer {
    *
    * @param vmindex - Which player(s) to remove shortcuts for.
    * @returns Result with error status per player.
+   *
+   * @category Shortcuts
    */
   async shortcutDelete(vmindex: VmIndex): Promise<MuMuCommandResult[]> {
     return this.execCommandResult([
@@ -1324,10 +1384,6 @@ export class MumuPlayer {
       "delete",
     ], vmindex);
   }
-
-  // -----------------------------------------------------------------------
-  // ADB / Shell
-  // -----------------------------------------------------------------------
 
   /**
    * Run an ADB command against player(s).
@@ -1348,6 +1404,8 @@ export class MumuPlayer {
    * // Get a system property
    * const version = await mumu.adb(0, "getprop ro.build.version.sdk");
    * ```
+   *
+   * @category ADB & Shell
    */
   async adb(vmindex: VmIndex, cmd: string): Promise<string> {
     return this.execStdout([
@@ -1373,6 +1431,8 @@ export class MumuPlayer {
    * ```ts
    * const sdk = await mumu.shell(0, "getprop ro.build.version.sdk");
    * ```
+   *
+   * @category ADB & Shell
    */
   async shell(vmindex: VmIndex, cmd: string): Promise<string> {
     return this.execStdout([
@@ -1383,10 +1443,6 @@ export class MumuPlayer {
       cmd,
     ]);
   }
-
-  // -----------------------------------------------------------------------
-  // ADB / Shell convenience
-  // -----------------------------------------------------------------------
 
   /**
    * Get the ADB serial string (`host:port`) for a running player.
@@ -1402,6 +1458,8 @@ export class MumuPlayer {
    * const serial = await mumu.getAdbSerial(0);
    * console.log(serial); // "127.0.0.1:16384"
    * ```
+   *
+   * @category ADB & Shell
    */
   async getAdbSerial(vmindex: number): Promise<string> {
     const [info] = await this.getInfo(vmindex);
@@ -1419,6 +1477,8 @@ export class MumuPlayer {
    *
    * @param vmindex - Which player(s) to connect.
    * @returns Command output.
+   *
+   * @category ADB & Shell
    */
   async connectAdb(vmindex: VmIndex): Promise<string> {
     return this.adb(vmindex, "connect");
@@ -1429,6 +1489,8 @@ export class MumuPlayer {
    *
    * @param vmindex - Which player(s) to disconnect.
    * @returns Command output.
+   *
+   * @category ADB & Shell
    */
   async disconnectAdb(vmindex: VmIndex): Promise<string> {
     return this.adb(vmindex, "disconnect");
@@ -1446,6 +1508,8 @@ export class MumuPlayer {
    * const sdk = await mumu.getProp(0, "ro.build.version.sdk");
    * console.log(sdk); // "33"
    * ```
+   *
+   * @category ADB & Shell
    */
   async getProp(vmindex: VmIndex, prop: string): Promise<string> {
     return this.shell(vmindex, `getprop ${prop}`);
@@ -1463,6 +1527,8 @@ export class MumuPlayer {
    * ```ts
    * await mumu.setProp(0, "debug.layout", "true");
    * ```
+   *
+   * @category ADB & Shell
    */
   async setProp(vmindex: VmIndex, prop: string, value: string): Promise<string> {
     return this.shell(vmindex, `setprop ${prop} ${value}`);
@@ -1480,6 +1546,8 @@ export class MumuPlayer {
    * ```ts
    * await mumu.pushFile(0, "C:\\data\\config.json", "/sdcard/config.json");
    * ```
+   *
+   * @category ADB & Shell
    */
   async pushFile(vmindex: number, localPath: string, remotePath: string): Promise<string> {
     return this.adb(vmindex, `push ${localPath} ${remotePath}`);
@@ -1497,14 +1565,12 @@ export class MumuPlayer {
    * ```ts
    * await mumu.pullFile(0, "/sdcard/screenshot.png", "C:\\screenshots\\shot.png");
    * ```
+   *
+   * @category ADB & Shell
    */
   async pullFile(vmindex: number, remotePath: string, localPath: string): Promise<string> {
     return this.adb(vmindex, `pull ${remotePath} ${localPath}`);
   }
-
-  // -----------------------------------------------------------------------
-  // App management extras
-  // -----------------------------------------------------------------------
 
   /**
    * Check if an app is currently running (in the foreground or background).
@@ -1519,6 +1585,8 @@ export class MumuPlayer {
    *   console.log("App is running");
    * }
    * ```
+   *
+   * @category Apps
    */
   async isAppRunning(vmindex: VmIndex, packageId: string): Promise<boolean> {
     const raw = await this.appInfo(vmindex, { package: packageId });
@@ -1541,6 +1609,8 @@ export class MumuPlayer {
    * const fg = await mumu.getForegroundApp(0);
    * console.log(fg); // "com.android.launcher3"
    * ```
+   *
+   * @category Apps
    */
   async getForegroundApp(vmindex: VmIndex): Promise<string | null> {
     const raw = await this.appInfo(vmindex, { installed: true });
@@ -1562,15 +1632,13 @@ export class MumuPlayer {
    * ```ts
    * await mumu.appRestart(0, "com.example.app");
    * ```
+   *
+   * @category Apps
    */
   async appRestart(vmindex: VmIndex, packageId: string): Promise<void> {
     await this.appClose(vmindex, packageId);
     await this.appLaunch(vmindex, packageId);
   }
-
-  // -----------------------------------------------------------------------
-  // Settings
-  // -----------------------------------------------------------------------
 
   /**
    * Read player settings.
@@ -1588,6 +1656,8 @@ export class MumuPlayer {
    * const settings = JSON.parse(raw);
    * console.log(settings.max_frame_rate); // "60"
    * ```
+   *
+   * @category Settings
    */
   async getSetting(options: SettingGetOptions = {}): Promise<string> {
     const args = ["setting"];
@@ -1624,6 +1694,8 @@ export class MumuPlayer {
    *   value: "120",
    * });
    * ```
+   *
+   * @category Settings
    */
   async setSetting(options: SettingSetOptions): Promise<string> {
     validateSetting(options.key, options.value);
@@ -1645,6 +1717,8 @@ export class MumuPlayer {
    *
    * @param options - The entries array and optional vmindex. See {@link SettingSetMultiOptions}.
    * @returns Raw command output.
+   *
+   * @category Settings
    */
   async setSettingMulti(options: SettingSetMultiOptions): Promise<string> {
     for (const entry of options.entries) {
@@ -1669,6 +1743,8 @@ export class MumuPlayer {
    *
    * @param options - The file path and optional vmindex. See {@link SettingFromFileOptions}.
    * @returns Raw command output.
+   *
+   * @category Settings
    */
   async setSettingFromFile(options: SettingFromFileOptions): Promise<string> {
     const args = ["setting"];
@@ -1680,10 +1756,6 @@ export class MumuPlayer {
     args.push("--path", options.path);
     return this.execStdout(args);
   }
-
-  // -----------------------------------------------------------------------
-  // Settings > Typed convenience methods
-  // -----------------------------------------------------------------------
 
   /**
    * Get all writable settings for a player as a typed object.
@@ -1700,6 +1772,8 @@ export class MumuPlayer {
    * console.log(settings.performance_mode); // "middle"
    * console.log(settings.force_discrete_graphics); // true
    * ```
+   *
+   * @category Settings
    */
   async getSettings(vmindex: number): Promise<MuMuWritableSettings> {
     const raw = await this.getSetting({ vmindex, allWritable: true });
@@ -1737,6 +1811,8 @@ export class MumuPlayer {
    * ```ts
    * await mumu.setResolution(0, 1920, 1080, 280);
    * ```
+   *
+   * @category Settings
    */
   async setResolution(
     vmindex: number,
@@ -1774,6 +1850,8 @@ export class MumuPlayer {
    * ```ts
    * await mumu.setPerformanceMode(0, "high");
    * ```
+   *
+   * @category Settings
    */
   async setPerformanceMode(
     vmindex: number,
@@ -1793,6 +1871,8 @@ export class MumuPlayer {
    * ```ts
    * await mumu.setGpuMode(0, "high");
    * ```
+   *
+   * @category Settings
    */
   async setGpuMode(vmindex: number, mode: GpuMode): Promise<string> {
     return this.setSetting({ vmindex, key: "gpu_mode", value: mode });
@@ -1809,6 +1889,8 @@ export class MumuPlayer {
    * ```ts
    * await mumu.setFrameRate(0, 120);
    * ```
+   *
+   * @category Settings
    */
   async setFrameRate(vmindex: number, fps: number): Promise<string> {
     if (fps < 1) {
@@ -1831,6 +1913,8 @@ export class MumuPlayer {
    * ```ts
    * await mumu.setBrightness(0, 75);
    * ```
+   *
+   * @category Settings
    */
   async setBrightness(vmindex: number, brightness: number): Promise<string> {
     return this.setSetting({
@@ -1855,6 +1939,8 @@ export class MumuPlayer {
    * ```ts
    * await mumu.setCustomPerformance(0, 4, 8);
    * ```
+   *
+   * @category Settings
    */
   async setCustomPerformance(
     vmindex: number,
@@ -1887,6 +1973,8 @@ export class MumuPlayer {
    * ```ts
    * await mumu.setCustomGpu(0, "Adreno (TM) 630");
    * ```
+   *
+   * @category Settings
    */
   async setCustomGpu(vmindex: number, gpuModel: string): Promise<string> {
     return this.setSettingMulti({
@@ -1920,6 +2008,8 @@ export class MumuPlayer {
    *   dns2: "8.8.4.4",
    * });
    * ```
+   *
+   * @category Settings
    */
   async setNetworkBridge(
     vmindex: number,
@@ -1954,16 +2044,14 @@ export class MumuPlayer {
     return this.setSettingMulti({ vmindex, entries });
   }
 
-  // -----------------------------------------------------------------------
-  // Simulation
-  // -----------------------------------------------------------------------
-
   /**
    * Get a simulated device property value.
    *
    * @param vmindex - Which player(s) to query.
    * @param key - The property to read. See {@link SimulationKey}.
    * @returns The current value of the simulated property.
+   *
+   * @category Simulation
    */
   async getSimulation(
     vmindex: VmIndex,
@@ -1994,6 +2082,8 @@ export class MumuPlayer {
    * // Clear the simulated MAC address
    * await mumu.setSimulation(0, "mac_address", "__null__");
    * ```
+   *
+   * @category Simulation
    */
   async setSimulation(
     vmindex: VmIndex,
@@ -2011,15 +2101,13 @@ export class MumuPlayer {
     ]);
   }
 
-  // -----------------------------------------------------------------------
-  // Driver
-  // -----------------------------------------------------------------------
-
   /**
    * Install a player driver.
    *
    * @param name - The driver to install. See {@link DriverName}.
    * @returns Raw command output.
+   *
+   * @category Drivers
    */
   async driverInstall(name: DriverName): Promise<string> {
     return this.execStdout(["driver", "install", "--name", name]);
@@ -2030,19 +2118,19 @@ export class MumuPlayer {
    *
    * @param name - The driver to uninstall. See {@link DriverName}.
    * @returns Raw command output.
+   *
+   * @category Drivers
    */
   async driverUninstall(name: DriverName): Promise<string> {
     return this.execStdout(["driver", "uninstall", "--name", name]);
   }
 
-  // -----------------------------------------------------------------------
-  // Log
-  // -----------------------------------------------------------------------
-
   /**
    * Enable MuMuManager logging.
    *
    * @returns Result with error status.
+   *
+   * @category Logging
    */
   async logOn(): Promise<MuMuCommandResult[]> {
     return this.execCommandResult(["log", "on"]);
@@ -2052,6 +2140,8 @@ export class MumuPlayer {
    * Disable MuMuManager logging.
    *
    * @returns Result with error status.
+   *
+   * @category Logging
    */
   async logOff(): Promise<MuMuCommandResult[]> {
     return this.execCommandResult(["log", "off"]);

@@ -7,5 +7,24 @@
   "includeVersion": true,
   "tsconfig": "tsconfig.json",
   "sourceLinkTemplate": "https://github.com/PiratePeep/mumuplayer/blob/{gitRevision}/{path}#L{line}",
-  "gitRevision": "main"
+  "gitRevision": "main",
+  "categorizeByGroup": false,
+  "defaultCategory": "Other",
+  "categoryOrder": [
+    "Lifecycle",
+    "Waiting",
+    "State",
+    "Window Control",
+    "Apps",
+    "Input",
+    "Tools",
+    "Shortcuts",
+    "ADB & Shell",
+    "Settings",
+    "Simulation",
+    "Drivers",
+    "Logging",
+    "Advanced",
+    "*"
+  ]
 }

@@ -9,5 +9,24 @@
   "sourceLinkTemplate": "https://github.com/PiratePeep/mumuplayer/blob/{gitRevision}/{path}#L{line}",
   "gitRevision": "main",
   "hidePageHeader": true,
-  "hideBreadcrumbs": true
+  "hideBreadcrumbs": true,
+  "categorizeByGroup": false,
+  "defaultCategory": "Other",
+  "categoryOrder": [
+    "Lifecycle",
+    "Waiting",
+    "State",
+    "Window Control",
+    "Apps",
+    "Input",
+    "Tools",
+    "Shortcuts",
+    "ADB & Shell",
+    "Settings",
+    "Simulation",
+    "Drivers",
+    "Logging",
+    "Advanced",
+    "*"
+  ]
 }
