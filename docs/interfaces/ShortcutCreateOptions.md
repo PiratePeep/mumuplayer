@@ -1,6 +1,6 @@
 # Interface: ShortcutCreateOptions
 
-Defined in: [src/types.ts:242](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L242)
+Defined in: [src/types.ts:314](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L314)
 
 Options for creating a desktop shortcut for a player.
 
@@ -10,7 +10,7 @@ Options for creating a desktop shortcut for a player.
 
 > `optional` **icon?**: `string`
 
-Defined in: [src/types.ts:247](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L247)
+Defined in: [src/types.ts:319](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L319)
 
 Path to a custom icon file for the shortcut.
 
@@ -20,7 +20,7 @@ Path to a custom icon file for the shortcut.
 
 > `optional` **name?**: `string`
 
-Defined in: [src/types.ts:244](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L244)
+Defined in: [src/types.ts:316](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L316)
 
 Display name of the shortcut.
 
@@ -30,6 +30,6 @@ Display name of the shortcut.
 
 > `optional` **package?**: `string`
 
-Defined in: [src/types.ts:250](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L250)
+Defined in: [src/types.ts:322](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L322)
 
 App package bundle ID to launch when the shortcut is activated.

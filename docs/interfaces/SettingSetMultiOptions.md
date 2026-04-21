@@ -1,6 +1,6 @@
 # Interface: SettingSetMultiOptions
 
-Defined in: [src/types.ts:297](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L297)
+Defined in: [src/types.ts:369](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L369)
 
 Options for setting multiple key-value pairs in a single call.
 
@@ -10,13 +10,13 @@ Options for setting multiple key-value pairs in a single call.
 
 > **entries**: `object`[]
 
-Defined in: [src/types.ts:302](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L302)
+Defined in: [src/types.ts:374](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L374)
 
 Array of key-value pairs to set.
 
 #### key
 
-> **key**: `string`
+> **key**: keyof MuMuWritableSettings \| `string` & `object`
 
 #### value
 
@@ -28,6 +28,6 @@ Array of key-value pairs to set.
 
 > `optional` **vmindex?**: [`VmIndex`](../type-aliases/VmIndex.md)
 
-Defined in: [src/types.ts:299](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L299)
+Defined in: [src/types.ts:371](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L371)
 
 Target player index. If omitted, sets global settings.

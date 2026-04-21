@@ -1,6 +1,6 @@
 # Interface: SettingFromFileOptions
 
-Defined in: [src/types.ts:306](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L306)
+Defined in: [src/types.ts:378](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L378)
 
 Options for applying settings from a JSON file.
 
@@ -10,7 +10,7 @@ Options for applying settings from a JSON file.
 
 > **path**: `string`
 
-Defined in: [src/types.ts:311](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L311)
+Defined in: [src/types.ts:383](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L383)
 
 Path to a UTF-8 encoded JSON file containing setting key-value pairs.
 
@@ -20,6 +20,6 @@ Path to a UTF-8 encoded JSON file containing setting key-value pairs.
 
 > `optional` **vmindex?**: [`VmIndex`](../type-aliases/VmIndex.md)
 
-Defined in: [src/types.ts:308](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L308)
+Defined in: [src/types.ts:380](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L380)
 
 Target player index. If omitted, applies to global settings.

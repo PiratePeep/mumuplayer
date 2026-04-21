@@ -2,7 +2,7 @@
 
 > **SimulationKey** = `"android_id"` \| `"mac_address"` \| `"imei"`
 
-Defined in: [src/types.ts:325](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L325)
+Defined in: [src/types.ts:705](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L705)
 
 Simulated device property keys.
 

@@ -1,8 +1,8 @@
-# Interface: MuMuManagerConfig
+# Interface: MumuPlayerConfig
 
 Defined in: [src/types.ts:27](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L27)
 
-Configuration options for the [MuMuManager](../classes/MuMuManager.md) constructor.
+Configuration options for the [MumuPlayer](../classes/MumuPlayer.md) constructor.
 
 ## Properties
 

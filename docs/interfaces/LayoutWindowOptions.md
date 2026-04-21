@@ -1,6 +1,6 @@
 # Interface: LayoutWindowOptions
 
-Defined in: [src/types.ts:160](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L160)
+Defined in: [src/types.ts:205](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L205)
 
 Options for positioning and sizing a player window.
 
@@ -10,7 +10,7 @@ Options for positioning and sizing a player window.
 
 > `optional` **posX?**: `number`
 
-Defined in: [src/types.ts:162](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L162)
+Defined in: [src/types.ts:207](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L207)
 
 X coordinate of the window's top-left corner (pixels from screen left).
 
@@ -20,7 +20,7 @@ X coordinate of the window's top-left corner (pixels from screen left).
 
 > `optional` **posY?**: `number`
 
-Defined in: [src/types.ts:165](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L165)
+Defined in: [src/types.ts:210](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L210)
 
 Y coordinate of the window's top-left corner (pixels from screen top).
 
@@ -30,7 +30,7 @@ Y coordinate of the window's top-left corner (pixels from screen top).
 
 > `optional` **sizeH?**: `number`
 
-Defined in: [src/types.ts:171](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L171)
+Defined in: [src/types.ts:216](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L216)
 
 Height of the player window in pixels.
 
@@ -40,6 +40,6 @@ Height of the player window in pixels.
 
 > `optional` **sizeW?**: `number`
 
-Defined in: [src/types.ts:168](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L168)
+Defined in: [src/types.ts:213](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L213)
 
 Width of the player window in pixels.

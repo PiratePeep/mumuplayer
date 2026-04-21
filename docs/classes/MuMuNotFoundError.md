@@ -2,9 +2,9 @@
 
 Defined in: [src/errors.ts:65](https://github.com/PiratePeep/mumuplayer/blob/main/src/errors.ts#L65)
 
-Error thrown when the MuMuManager executable cannot be found at the configured path.
+Error thrown when the MuMuPlayer executable cannot be found at the configured path.
 
-Typically encountered when [MuMuManager.assertExists](MuMuManager.md#assertexists) is called and the
+Typically encountered when [MumuPlayer.assertExists](MumuPlayer.md#assertexists) is called and the
 file does not exist on disk.
 
 ## Example

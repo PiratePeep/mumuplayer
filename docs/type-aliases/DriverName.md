@@ -2,7 +2,7 @@
 
 > **DriverName** = `"lwf"`
 
-Defined in: [src/types.ts:336](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L336)
+Defined in: [src/types.ts:716](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L716)
 
 Available driver names for installation/uninstallation.
 

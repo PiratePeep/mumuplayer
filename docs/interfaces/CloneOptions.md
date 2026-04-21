@@ -1,6 +1,6 @@
 # Interface: CloneOptions
 
-Defined in: [src/types.ts:126](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L126)
+Defined in: [src/types.ts:165](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L165)
 
 Options for cloning an existing player.
 
@@ -10,6 +10,6 @@ Options for cloning an existing player.
 
 > `optional` **number?**: `number`
 
-Defined in: [src/types.ts:128](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L128)
+Defined in: [src/types.ts:167](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L167)
 
 Number of clones to create from the source player.

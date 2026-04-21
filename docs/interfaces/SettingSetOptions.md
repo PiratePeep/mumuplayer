@@ -1,6 +1,6 @@
 # Interface: SettingSetOptions
 
-Defined in: [src/types.ts:285](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L285)
+Defined in: [src/types.ts:357](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L357)
 
 Options for setting a single key-value pair on a player.
 
@@ -8,11 +8,11 @@ Options for setting a single key-value pair on a player.
 
 ### key
 
-> **key**: `string`
+> **key**: keyof MuMuWritableSettings \| `string` & `object`
 
-Defined in: [src/types.ts:290](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L290)
+Defined in: [src/types.ts:362](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L362)
 
-The setting key to modify.
+The setting key to modify. Accepts any known [MuMuSettingKey](../type-aliases/MuMuSettingKey.md) or an arbitrary string.
 
 ***
 
@@ -20,9 +20,9 @@ The setting key to modify.
 
 > **value**: `string`
 
-Defined in: [src/types.ts:293](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L293)
+Defined in: [src/types.ts:365](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L365)
 
-The value to assign. Use `"__null__"` to clear a setting.
+The value to assign as a string. Use `"__null__"` to clear a setting.
 
 ***
 
@@ -30,6 +30,6 @@ The value to assign. Use `"__null__"` to clear a setting.
 
 > `optional` **vmindex?**: [`VmIndex`](../type-aliases/VmIndex.md)
 
-Defined in: [src/types.ts:287](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L287)
+Defined in: [src/types.ts:359](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L359)
 
 Target player index. If omitted, sets a global setting.

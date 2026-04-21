@@ -1,8 +1,12 @@
 # Interface: LaunchOptions
 
-Defined in: [src/types.ts:154](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L154)
+Defined in: [src/types.ts:199](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L199)
 
-Options for the [MuMuManager.launch](../classes/MuMuManager.md#launch) command.
+Options for the [MumuPlayer.launch](../classes/MumuPlayer.md#launch) command.
+
+## Extended by
+
+- [`LaunchAndWaitOptions`](LaunchAndWaitOptions.md)
 
 ## Properties
 
@@ -10,6 +14,6 @@ Options for the [MuMuManager.launch](../classes/MuMuManager.md#launch) command.
 
 > `optional` **package?**: `string`
 
-Defined in: [src/types.ts:156](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L156)
+Defined in: [src/types.ts:201](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L201)
 
 App package to auto-launch after the player starts.

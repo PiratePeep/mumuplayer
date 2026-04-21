@@ -1,6 +1,6 @@
 # Interface: SettingGetOptions
 
-Defined in: [src/types.ts:267](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L267)
+Defined in: [src/types.ts:339](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L339)
 
 Options for reading player settings.
 
@@ -18,7 +18,7 @@ const settings = JSON.parse(json);
 
 > `optional` **all?**: `boolean`
 
-Defined in: [src/types.ts:275](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L275)
+Defined in: [src/types.ts:347](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L347)
 
 Return all settings (read-only and writable).
 
@@ -28,7 +28,7 @@ Return all settings (read-only and writable).
 
 > `optional` **allWritable?**: `boolean`
 
-Defined in: [src/types.ts:278](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L278)
+Defined in: [src/types.ts:350](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L350)
 
 Return only writable settings.
 
@@ -38,7 +38,7 @@ Return only writable settings.
 
 > `optional` **info?**: `boolean`
 
-Defined in: [src/types.ts:281](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L281)
+Defined in: [src/types.ts:353](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L353)
 
 Include descriptive info for the requested setting key(s).
 
@@ -48,7 +48,7 @@ Include descriptive info for the requested setting key(s).
 
 > `optional` **key?**: `string` \| `string`[]
 
-Defined in: [src/types.ts:272](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L272)
+Defined in: [src/types.ts:344](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L344)
 
 One or more setting keys to query.
 
@@ -58,6 +58,6 @@ One or more setting keys to query.
 
 > `optional` **vmindex?**: [`VmIndex`](../type-aliases/VmIndex.md)
 
-Defined in: [src/types.ts:269](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L269)
+Defined in: [src/types.ts:341](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L341)
 
 Target player index. If omitted, returns global settings.

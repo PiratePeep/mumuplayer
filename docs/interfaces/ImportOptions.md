@@ -1,6 +1,6 @@
 # Interface: ImportOptions
 
-Defined in: [src/types.ts:132](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L132)
+Defined in: [src/types.ts:171](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L171)
 
 Options for importing `.mumudata` backup files.
 
@@ -10,6 +10,6 @@ Options for importing `.mumudata` backup files.
 
 > `optional` **number?**: `number`
 
-Defined in: [src/types.ts:134](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L134)
+Defined in: [src/types.ts:173](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L173)
 
 Number of instances to import from the file.

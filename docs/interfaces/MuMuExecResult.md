@@ -1,6 +1,6 @@
 # Interface: MuMuExecResult
 
-Defined in: [src/types.ts:346](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L346)
+Defined in: [src/types.ts:755](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L755)
 
 Raw result from executing a MuMuManager command.
 Useful for inspecting stderr or exit codes when troubleshooting.
@@ -11,7 +11,7 @@ Useful for inspecting stderr or exit codes when troubleshooting.
 
 > **exitCode**: `number`
 
-Defined in: [src/types.ts:354](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L354)
+Defined in: [src/types.ts:763](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L763)
 
 Process exit code. Note: MuMuManager may return non-zero even on success.
 
@@ -21,7 +21,7 @@ Process exit code. Note: MuMuManager may return non-zero even on success.
 
 > **stderr**: `string`
 
-Defined in: [src/types.ts:351](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L351)
+Defined in: [src/types.ts:760](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L760)
 
 Standard error output from the command.
 
@@ -31,6 +31,6 @@ Standard error output from the command.
 
 > **stdout**: `string`
 
-Defined in: [src/types.ts:348](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L348)
+Defined in: [src/types.ts:757](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L757)
 
 Standard output from the command.

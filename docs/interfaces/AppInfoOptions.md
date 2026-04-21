@@ -1,8 +1,8 @@
 # Interface: AppInfoOptions
 
-Defined in: [src/types.ts:179](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L179)
+Defined in: [src/types.ts:242](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L242)
 
-Options for querying app information inside a player.
+Options for querying app state inside a player.
 
 ## Properties
 
@@ -10,9 +10,9 @@ Options for querying app information inside a player.
 
 > `optional` **installed?**: `boolean`
 
-Defined in: [src/types.ts:184](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L184)
+Defined in: [src/types.ts:247](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L247)
 
-When `true`, lists all installed apps on the player.
+When `true`, returns the currently active (foreground) app's package ID.
 
 ***
 
@@ -20,6 +20,6 @@ When `true`, lists all installed apps on the player.
 
 > `optional` **package?**: `string`
 
-Defined in: [src/types.ts:181](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L181)
+Defined in: [src/types.ts:244](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L244)
 
-Query info for a specific app by its package bundle ID.
+Check the running state of a specific app by its package bundle ID. Returns `"running"` or `"not_installed"` (meaning not currently running).

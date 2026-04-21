@@ -2,7 +2,7 @@
 
 Defined in: [src/errors.ts:19](https://github.com/PiratePeep/mumuplayer/blob/main/src/errors.ts#L19)
 
-Error thrown when a MuMuManager command fails or produces unexpected output.
+Error thrown when a MuMuPlayer command fails or produces unexpected output.
 
 Contains the full stdout, stderr, and exit code from the failed command
 for debugging purposes.

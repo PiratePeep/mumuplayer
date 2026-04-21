@@ -1,6 +1,6 @@
 # Interface: CreateOptions
 
-Defined in: [src/types.ts:114](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L114)
+Defined in: [src/types.ts:153](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L153)
 
 Options for creating new player instances.
 
@@ -10,7 +10,7 @@ Options for creating new player instances.
 
 > `optional` **mini?**: `boolean`
 
-Defined in: [src/types.ts:122](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L122)
+Defined in: [src/types.ts:161](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L161)
 
 Use mini disk mode for the data disk (smaller initial size).
 
@@ -20,7 +20,7 @@ Use mini disk mode for the data disk (smaller initial size).
 
 > `optional` **number?**: `number`
 
-Defined in: [src/types.ts:119](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L119)
+Defined in: [src/types.ts:158](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L158)
 
 Number of player instances to create.
 
@@ -30,6 +30,6 @@ Number of player instances to create.
 
 > `optional` **vmindex?**: [`VmIndex`](../type-aliases/VmIndex.md)
 
-Defined in: [src/types.ts:116](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L116)
+Defined in: [src/types.ts:155](https://github.com/PiratePeep/mumuplayer/blob/main/src/types.ts#L155)
 
 Target index to assign the new player. If omitted, the next available index is used.
