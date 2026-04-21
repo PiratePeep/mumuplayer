@@ -499,11 +499,7 @@ export interface MuMuWritableSettings {
 
   // --- Display ---
 
-  /**
-   * Screen brightness level.
-   * @minimum 0
-   * @maximum 100
-   */
+  /** Screen brightness level (0-100). */
   screen_brightness: number;
 
   /** Maximum frame rate cap. */
@@ -625,25 +621,13 @@ export interface MuMuWritableSettings {
   /** Display resolution preset mode. */
   resolution_mode: ResolutionMode;
 
-  /**
-   * Custom resolution width in pixels (used when {@link resolution_mode} is `"custom"`).
-   * @minimum 380
-   * @maximum 4096
-   */
+  /** Custom resolution width in pixels, 380-4096 (used when {@link resolution_mode} is `"custom"`). */
   "resolution_width.custom": number;
 
-  /**
-   * Custom resolution height in pixels (used when {@link resolution_mode} is `"custom"`).
-   * @minimum 380
-   * @maximum 4096
-   */
+  /** Custom resolution height in pixels, 380-4096 (used when {@link resolution_mode} is `"custom"`). */
   "resolution_height.custom": number;
 
-  /**
-   * Custom resolution DPI (used when {@link resolution_mode} is `"custom"`).
-   * @minimum 10
-   * @maximum 960
-   */
+  /** Custom resolution DPI, 10-960 (used when {@link resolution_mode} is `"custom"`). */
   "resolution_dpi.custom": number;
 }
 

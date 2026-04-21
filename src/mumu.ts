@@ -1848,7 +1848,7 @@ export class MumuPlayer {
    *
    * @param vmindex - Which player to configure.
    * @param cores - Number of CPU cores (1-16).
-   * @param memoryGb - Memory allocation in GB (see {@link MuMuWritableSettings.performance_mem.custom} for allowed values).
+   * @param memoryGb - Memory allocation in GB. Allowed values: 0.75, 1, 1.5, 1.75, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16.
    * @returns Raw command output.
    *
    * @example
