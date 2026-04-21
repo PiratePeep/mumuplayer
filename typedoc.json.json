@@ -1,0 +1,11 @@
+{
+  "entryPoints": ["src/index.ts"],
+  "json": "api.json",
+  "pretty": true,
+  "excludePrivate": true,
+  "excludeInternal": true,
+  "includeVersion": true,
+  "tsconfig": "tsconfig.json",
+  "sourceLinkTemplate": "https://github.com/PiratePeep/mumuplayer/blob/{gitRevision}/{path}#L{line}",
+  "gitRevision": "main"
+}

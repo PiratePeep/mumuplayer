@@ -1,0 +1,13 @@
+{
+  "entryPoints": ["src/index.ts"],
+  "plugin": ["typedoc-plugin-markdown"],
+  "out": "docs",
+  "excludePrivate": true,
+  "excludeInternal": true,
+  "includeVersion": true,
+  "tsconfig": "tsconfig.json",
+  "sourceLinkTemplate": "https://github.com/PiratePeep/mumuplayer/blob/{gitRevision}/{path}#L{line}",
+  "gitRevision": "main",
+  "hidePageHeader": true,
+  "hideBreadcrumbs": true
+}

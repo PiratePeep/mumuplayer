@@ -1,0 +1,9 @@
+src/
+docs/
+api.json
+tsconfig.json
+tsup.config.ts
+typedoc.json.json
+typedoc.md.json
+node_modules/
+.git/
