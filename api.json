@@ -1456,7 +1456,7 @@
 				"summary": [
 					{
 						"kind": "text",
-						"text": "TypeScript wrapper for the MuMu Player MuMuManager CLI.\r\n\r\nProvides type-safe async methods for every MuMuManager subcommand including\r\nplayer lifecycle management, app control, settings, simulation properties,\r\nADB/shell access, and more."
+						"text": "TypeScript wrapper for the MuMu Player MuMuManager CLI.\n\nProvides type-safe async methods for every MuMuManager subcommand including\nplayer lifecycle management, app control, settings, simulation properties,\nADB/shell access, and more."
 					}
 				],
 				"blockTags": [
@@ -1465,7 +1465,7 @@
 						"content": [
 							{
 								"kind": "code",
-								"text": "```ts\r\nimport { MumuPlayer } from \"mumuplayer\";\r\n\r\nconst mumu = new MumuPlayer();\r\n\r\n// List all players\r\nconst players = await mumu.getInfo(\"all\");\r\n\r\n// Launch player 0\r\nawait mumu.launch(0);\r\n\r\n// Install an APK on player 0\r\nawait mumu.appInstall(0, \"C:\\\\path\\\\to\\\\app.apk\");\r\n```"
+								"text": "```ts\nimport { MumuPlayer } from \"mumuplayer\";\n\nconst mumu = new MumuPlayer();\n\n// List all players\nconst players = await mumu.getInfo(\"all\");\n\n// Launch player 0\nawait mumu.launch(0);\n\n// Install an APK on player 0\nawait mumu.appInstall(0, \"C:\\\\path\\\\to\\\\app.apk\");\n```"
 							}
 						]
 					}
@@ -1561,9 +1561,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 1352,
+							"line": 1410,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1352"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1410"
 						}
 					],
 					"signatures": [
@@ -1577,7 +1577,7 @@
 								"summary": [
 									{
 										"kind": "text",
-										"text": "Run an ADB command against player(s).\r\n\r\nSupports built-in shortcuts: "
+										"text": "Run an ADB command against player(s).\n\nSupports built-in shortcuts: "
 									},
 									{
 										"kind": "code",
@@ -1609,7 +1609,7 @@
 									},
 									{
 										"kind": "text",
-										"text": ",\r\n"
+										"text": ",\n"
 									},
 									{
 										"kind": "code",
@@ -1649,7 +1649,7 @@
 									},
 									{
 										"kind": "text",
-										"text": ",\r\n"
+										"text": ",\n"
 									},
 									{
 										"kind": "code",
@@ -1707,7 +1707,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\n// Connect ADB\r\nawait mumu.adb(0, \"connect\");\r\n\r\n// Get a system property\r\nconst version = await mumu.adb(0, \"getprop ro.build.version.sdk\");\r\n```"
+												"text": "```ts\n// Connect ADB\nawait mumu.adb(0, \"connect\");\n\n// Get a system property\nconst version = await mumu.adb(0, \"getprop ro.build.version.sdk\");\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "ADB & Shell"
 											}
 										]
 									}
@@ -1716,9 +1725,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 1352,
+									"line": 1410,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1352"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1410"
 								}
 							],
 							"parameters": [
@@ -1791,9 +1800,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 903,
+							"line": 941,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L903"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L941"
 						}
 					],
 					"signatures": [
@@ -1819,15 +1828,24 @@
 												"text": "Raw command output."
 											}
 										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Apps"
+											}
+										]
 									}
 								]
 							},
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 903,
+									"line": 941,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L903"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L941"
 								}
 							],
 							"parameters": [
@@ -1900,9 +1918,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 939,
+							"line": 979,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L939"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L979"
 						}
 					],
 					"signatures": [
@@ -1916,7 +1934,7 @@
 								"summary": [
 									{
 										"kind": "text",
-										"text": "Query app state on a player (raw JSON).\r\n\r\nNote: "
+										"text": "Query app state on a player (raw JSON).\n\nNote: "
 									},
 									{
 										"kind": "code",
@@ -1940,7 +1958,7 @@
 									},
 									{
 										"kind": "text",
-										"text": " (which really\r\nmeans \"not currently running\" — it does **not** indicate whether the app\r\nis installed). For convenience, use "
+										"text": " (which really\nmeans \"not currently running\" — it does **not** indicate whether the app\nis installed). For convenience, use "
 									},
 									{
 										"kind": "inline-tag",
@@ -1950,7 +1968,7 @@
 									},
 									{
 										"kind": "text",
-										"text": " for a reliable\r\ninstallation check, "
+										"text": " for a reliable\ninstallation check, "
 									},
 									{
 										"kind": "inline-tag",
@@ -1960,7 +1978,7 @@
 									},
 									{
 										"kind": "text",
-										"text": " for a boolean running check, or\r\n"
+										"text": " for a boolean running check, or\n"
 									},
 									{
 										"kind": "inline-tag",
@@ -1988,7 +2006,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\n// Get the currently active (foreground) app\r\nconst result = await mumu.appInfo(0, { installed: true });\r\n// => '{ \"active\": \"com.example.app\" }'\r\n\r\n// Check if a specific app is running\r\nconst result = await mumu.appInfo(0, { package: \"com.example.app\" });\r\n// => '{ \"state\": \"running\" }' or '{ \"state\": \"not_installed\" }'\r\n```"
+												"text": "```ts\n// Get the currently active (foreground) app\nconst result = await mumu.appInfo(0, { installed: true });\n// => '{ \"active\": \"com.example.app\" }'\n\n// Check if a specific app is running\nconst result = await mumu.appInfo(0, { package: \"com.example.app\" });\n// => '{ \"state\": \"running\" }' or '{ \"state\": \"not_installed\" }'\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Apps"
 											}
 										]
 									}
@@ -1997,9 +2024,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 939,
+									"line": 979,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L939"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L979"
 								}
 							],
 							"parameters": [
@@ -2085,9 +2112,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 846,
+							"line": 878,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L846"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L878"
 						}
 					],
 					"signatures": [
@@ -2119,7 +2146,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\nawait mumu.appInstall(0, \"C:\\\\Downloads\\\\myapp.apk\");\r\n```"
+												"text": "```ts\nawait mumu.appInstall(0, \"C:\\\\Downloads\\\\myapp.apk\");\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Apps"
 											}
 										]
 									}
@@ -2128,9 +2164,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 846,
+									"line": 878,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L846"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L878"
 								}
 							],
 							"parameters": [
@@ -2227,9 +2263,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 884,
+							"line": 920,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L884"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L920"
 						}
 					],
 					"signatures": [
@@ -2255,15 +2291,24 @@
 												"text": "Raw command output."
 											}
 										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Apps"
+											}
+										]
 									}
 								]
 							},
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 884,
+									"line": 920,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L884"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L920"
 								}
 							],
 							"parameters": [
@@ -2336,9 +2381,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 1566,
+							"line": 1638,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1566"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1638"
 						}
 					],
 					"signatures": [
@@ -2361,7 +2406,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\nawait mumu.appRestart(0, \"com.example.app\");\r\n```"
+												"text": "```ts\nawait mumu.appRestart(0, \"com.example.app\");\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Apps"
 											}
 										]
 									}
@@ -2370,9 +2424,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 1566,
+									"line": 1638,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1566"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1638"
 								}
 							],
 							"parameters": [
@@ -2445,9 +2499,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 865,
+							"line": 899,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L865"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L899"
 						}
 					],
 					"signatures": [
@@ -2473,15 +2527,24 @@
 												"text": "Raw command output."
 											}
 										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Apps"
+											}
+										]
 									}
 								]
 							},
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 865,
+									"line": 899,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L865"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L899"
 								}
 							],
 							"parameters": [
@@ -2562,9 +2625,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 144,
+							"line": 146,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L144"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L146"
 						}
 					],
 					"signatures": [
@@ -2596,15 +2659,24 @@
 												"text": " When the executable is not found at the configured path."
 											}
 										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Advanced"
+											}
+										]
 									}
 								]
 							},
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 144,
+									"line": 146,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L144"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L146"
 								}
 							],
 							"type": {
@@ -2635,9 +2707,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 316,
+							"line": 320,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L316"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L320"
 						}
 					],
 					"signatures": [
@@ -2663,15 +2735,24 @@
 												"text": "Array of results, one per cloned player, with the assigned index and error status."
 											}
 										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Lifecycle"
+											}
+										]
 									}
 								]
 							},
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 316,
+									"line": 320,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L316"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L320"
 								}
 							],
 							"parameters": [
@@ -2762,9 +2843,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 1423,
+							"line": 1483,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1423"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1483"
 						}
 					],
 					"signatures": [
@@ -2790,15 +2871,24 @@
 												"text": "Command output."
 											}
 										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "ADB & Shell"
+											}
+										]
 									}
 								]
 							},
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 1423,
+									"line": 1483,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1423"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1483"
 								}
 							],
 							"parameters": [
@@ -2852,9 +2942,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 295,
+							"line": 297,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L295"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L297"
 						}
 					],
 					"signatures": [
@@ -2886,7 +2976,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\nconst results = await mumu.create({ number: 2 });\r\nfor (const r of results) {\r\n  console.log(`Player ${r.index}: ${r.errcode === 0 ? \"ok\" : r.errmsg}`);\r\n}\r\n```"
+												"text": "```ts\nconst results = await mumu.create({ number: 2 });\nfor (const r of results) {\n  console.log(`Player ${r.index}: ${r.errcode === 0 ? \"ok\" : r.errmsg}`);\n}\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Lifecycle"
 											}
 										]
 									}
@@ -2895,9 +2994,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 295,
+									"line": 297,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L295"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L297"
 								}
 							],
 							"parameters": [
@@ -2967,9 +3066,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 339,
+							"line": 345,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L339"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L345"
 						}
 					],
 					"signatures": [
@@ -2995,15 +3094,24 @@
 												"text": "Array of results, one per deleted player, with error status."
 											}
 										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Lifecycle"
+											}
+										]
 									}
 								]
 							},
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 339,
+									"line": 345,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L339"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L345"
 								}
 							],
 							"parameters": [
@@ -3062,9 +3170,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 1433,
+							"line": 1495,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1433"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1495"
 						}
 					],
 					"signatures": [
@@ -3090,15 +3198,24 @@
 												"text": "Command output."
 											}
 										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "ADB & Shell"
+											}
+										]
 									}
 								]
 							},
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 1433,
+									"line": 1495,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1433"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1495"
 								}
 							],
 							"parameters": [
@@ -3152,9 +3269,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 2024,
+							"line": 2112,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L2024"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L2112"
 						}
 					],
 					"signatures": [
@@ -3180,15 +3297,24 @@
 												"text": "Raw command output."
 											}
 										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Drivers"
+											}
+										]
 									}
 								]
 							},
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 2024,
+									"line": 2112,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L2024"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L2112"
 								}
 							],
 							"parameters": [
@@ -3250,9 +3376,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 2034,
+							"line": 2124,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L2034"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L2124"
 						}
 					],
 					"signatures": [
@@ -3278,15 +3404,24 @@
 												"text": "Raw command output."
 											}
 										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Drivers"
+											}
+										]
 									}
 								]
 							},
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 2034,
+									"line": 2124,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L2034"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L2124"
 								}
 							],
 							"parameters": [
@@ -3348,9 +3483,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 400,
+							"line": 412,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L400"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L412"
 						}
 					],
 					"signatures": [
@@ -3390,7 +3525,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\n// Export player 0 as a compressed file\r\nawait mumu.exportData(0, { dir: \"C:\\\\backups\", zip: true });\r\n```"
+												"text": "```ts\n// Export player 0 as a compressed file\nawait mumu.exportData(0, { dir: \"C:\\\\backups\", zip: true });\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Lifecycle"
 											}
 										]
 									}
@@ -3399,9 +3543,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 400,
+									"line": 412,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L400"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L412"
 								}
 							],
 							"parameters": [
@@ -3487,9 +3631,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 1406,
+							"line": 1464,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1406"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1464"
 						}
 					],
 					"signatures": [
@@ -3511,7 +3655,7 @@
 									},
 									{
 										"kind": "text",
-										"text": ") for a running player.\r\n\r\nUseful for connecting external ADB tools to the player."
+										"text": ") for a running player.\n\nUseful for connecting external ADB tools to the player."
 									}
 								],
 								"blockTags": [
@@ -3552,7 +3696,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\nconst serial = await mumu.getAdbSerial(0);\r\nconsole.log(serial); // \"127.0.0.1:16384\"\r\n```"
+												"text": "```ts\nconst serial = await mumu.getAdbSerial(0);\nconsole.log(serial); // \"127.0.0.1:16384\"\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "ADB & Shell"
 											}
 										]
 									}
@@ -3561,9 +3714,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 1406,
+									"line": 1464,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1406"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1464"
 								}
 							],
 							"parameters": [
@@ -3615,9 +3768,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 1545,
+							"line": 1615,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1545"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1615"
 						}
 					],
 					"signatures": [
@@ -3657,7 +3810,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\nconst fg = await mumu.getForegroundApp(0);\r\nconsole.log(fg); // \"com.android.launcher3\"\r\n```"
+												"text": "```ts\nconst fg = await mumu.getForegroundApp(0);\nconsole.log(fg); // \"com.android.launcher3\"\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Apps"
 											}
 										]
 									}
@@ -3666,9 +3828,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 1545,
+									"line": 1615,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1545"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1615"
 								}
 							],
 							"parameters": [
@@ -3757,7 +3919,7 @@
 									},
 									{
 										"kind": "text",
-										"text": " objects.\r\n\r\nWhen "
+										"text": " objects.\n\nWhen "
 									},
 									{
 										"kind": "code",
@@ -3783,7 +3945,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\n// Get info for all players\r\nconst all = await mumu.getInfo();\r\n\r\n// Get info for a specific player\r\nconst [player] = await mumu.getInfo(0);\r\nconsole.log(player.name, player.player_state);\r\n```"
+												"text": "```ts\n// Get info for all players\nconst all = await mumu.getInfo();\n\n// Get info for a specific player\nconst [player] = await mumu.getInfo(0);\nconsole.log(player.name, player.player_state);\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Lifecycle"
 											}
 										]
 									}
@@ -3854,9 +4025,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 652,
+							"line": 676,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L652"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L676"
 						}
 					],
 					"signatures": [
@@ -3896,7 +4067,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\nconst player = await mumu.getPlayerByName(\"My Player\");\r\nif (player) {\r\n  console.log(`Found at index ${player.index}`);\r\n}\r\n```"
+												"text": "```ts\nconst player = await mumu.getPlayerByName(\"My Player\");\nif (player) {\n  console.log(`Found at index ${player.index}`);\n}\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "State"
 											}
 										]
 									}
@@ -3905,9 +4085,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 652,
+									"line": 676,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L652"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L676"
 								}
 							],
 							"parameters": [
@@ -3970,9 +4150,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 668,
+							"line": 694,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L668"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L694"
 						}
 					],
 					"signatures": [
@@ -4004,7 +4184,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\nconst count = await mumu.getPlayerCount();\r\nconsole.log(`${count} total players`);\r\n```"
+												"text": "```ts\nconst count = await mumu.getPlayerCount();\nconsole.log(`${count} total players`);\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "State"
 											}
 										]
 									}
@@ -4013,9 +4202,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 668,
+									"line": 694,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L668"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L694"
 								}
 							],
 							"type": {
@@ -4046,9 +4235,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 1450,
+							"line": 1514,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1450"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1514"
 						}
 					],
 					"signatures": [
@@ -4080,7 +4269,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\nconst sdk = await mumu.getProp(0, \"ro.build.version.sdk\");\r\nconsole.log(sdk); // \"33\"\r\n```"
+												"text": "```ts\nconst sdk = await mumu.getProp(0, \"ro.build.version.sdk\");\nconsole.log(sdk); // \"33\"\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "ADB & Shell"
 											}
 										]
 									}
@@ -4089,9 +4287,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 1450,
+									"line": 1514,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1450"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1514"
 								}
 							],
 							"parameters": [
@@ -4172,9 +4370,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 613,
+							"line": 633,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L613"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L633"
 						}
 					],
 					"signatures": [
@@ -4206,7 +4404,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\nconst running = await mumu.getRunningPlayers();\r\nconsole.log(`${running.length} players are running`);\r\n```"
+												"text": "```ts\nconst running = await mumu.getRunningPlayers();\nconsole.log(`${running.length} players are running`);\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "State"
 											}
 										]
 									}
@@ -4215,9 +4422,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 613,
+									"line": 633,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L613"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L633"
 								}
 							],
 							"type": {
@@ -4253,9 +4460,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 1592,
+							"line": 1662,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1592"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1662"
 						}
 					],
 					"signatures": [
@@ -4269,7 +4476,7 @@
 								"summary": [
 									{
 										"kind": "text",
-										"text": "Read player settings.\r\n\r\nReturns the raw JSON string from MuMuManager. The caller can "
+										"text": "Read player settings.\n\nReturns the raw JSON string from MuMuManager. The caller can "
 									},
 									{
 										"kind": "code",
@@ -4277,7 +4484,7 @@
 									},
 									{
 										"kind": "text",
-										"text": "\r\nthe result to work with the data programmatically."
+										"text": "\nthe result to work with the data programmatically."
 									}
 								],
 								"blockTags": [
@@ -4295,7 +4502,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\n// Get all writable settings for player 0\r\nconst raw = await mumu.getSetting({ vmindex: 0, allWritable: true });\r\nconst settings = JSON.parse(raw);\r\nconsole.log(settings.max_frame_rate); // \"60\"\r\n```"
+												"text": "```ts\n// Get all writable settings for player 0\nconst raw = await mumu.getSetting({ vmindex: 0, allWritable: true });\nconst settings = JSON.parse(raw);\nconsole.log(settings.max_frame_rate); // \"60\"\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Settings"
 											}
 										]
 									}
@@ -4304,9 +4520,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 1592,
+									"line": 1662,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1592"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1662"
 								}
 							],
 							"parameters": [
@@ -4371,9 +4587,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 1704,
+							"line": 1778,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1704"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1778"
 						}
 					],
 					"signatures": [
@@ -4387,7 +4603,7 @@
 								"summary": [
 									{
 										"kind": "text",
-										"text": "Get all writable settings for a player as a typed object.\r\n\r\nValues are coerced from strings to their proper types (booleans, numbers)."
+										"text": "Get all writable settings for a player as a typed object.\n\nValues are coerced from strings to their proper types (booleans, numbers)."
 									}
 								],
 								"blockTags": [
@@ -4415,7 +4631,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\nconst settings = await mumu.getSettings(0);\r\nconsole.log(settings.max_frame_rate); // 60\r\nconsole.log(settings.performance_mode); // \"middle\"\r\nconsole.log(settings.force_discrete_graphics); // true\r\n```"
+												"text": "```ts\nconst settings = await mumu.getSettings(0);\nconsole.log(settings.max_frame_rate); // 60\nconsole.log(settings.performance_mode); // \"middle\"\nconsole.log(settings.force_discrete_graphics); // true\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Settings"
 											}
 										]
 									}
@@ -4424,9 +4649,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 1704,
+									"line": 1778,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1704"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1778"
 								}
 							],
 							"parameters": [
@@ -4480,9 +4705,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 1968,
+							"line": 2056,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1968"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L2056"
 						}
 					],
 					"signatures": [
@@ -4508,15 +4733,24 @@
 												"text": "The current value of the simulated property."
 											}
 										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Simulation"
+											}
+										]
 									}
 								]
 							},
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 1968,
+									"line": 2056,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1968"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L2056"
 								}
 							],
 							"parameters": [
@@ -4601,9 +4835,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 631,
+							"line": 653,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L631"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L653"
 						}
 					],
 					"signatures": [
@@ -4635,7 +4869,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\nconst stopped = await mumu.getStoppedPlayers();\r\nconsole.log(`${stopped.length} players are stopped`);\r\n```"
+												"text": "```ts\nconst stopped = await mumu.getStoppedPlayers();\nconsole.log(`${stopped.length} players are stopped`);\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "State"
 											}
 										]
 									}
@@ -4644,9 +4887,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 631,
+									"line": 653,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L631"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L653"
 								}
 							],
 							"type": {
@@ -4682,9 +4925,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 777,
+							"line": 809,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L777"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L809"
 						}
 					],
 					"signatures": [
@@ -4698,7 +4941,7 @@
 								"summary": [
 									{
 										"kind": "text",
-										"text": "Send a player window to the background (completely hidden, not just minimized).\r\n\r\nThe player must be running. Use "
+										"text": "Send a player window to the background (completely hidden, not just minimized).\n\nThe player must be running. Use "
 									},
 									{
 										"kind": "inline-tag",
@@ -4735,15 +4978,24 @@
 												"text": " If the player is not running."
 											}
 										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Window Control"
+											}
+										]
 									}
 								]
 							},
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 777,
+									"line": 809,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L777"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L809"
 								}
 							],
 							"parameters": [
@@ -4800,9 +5052,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 376,
+							"line": 386,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L376"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L386"
 						}
 					],
 					"signatures": [
@@ -4836,15 +5088,24 @@
 												"text": "Raw command output."
 											}
 										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Lifecycle"
+											}
+										]
 									}
 								]
 							},
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 376,
+									"line": 386,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L376"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L386"
 								}
 							],
 							"parameters": [
@@ -4936,9 +5197,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 1243,
+							"line": 1297,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1243"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1297"
 						}
 					],
 					"signatures": [
@@ -4970,7 +5231,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\nawait mumu.inputText(0, \"hello world\");\r\n```"
+												"text": "```ts\nawait mumu.inputText(0, \"hello world\");\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Input"
 											}
 										]
 									}
@@ -4979,9 +5249,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 1243,
+									"line": 1297,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1243"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1297"
 								}
 							],
 							"parameters": [
@@ -5054,9 +5324,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 597,
+							"line": 615,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L597"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L615"
 						}
 					],
 					"signatures": [
@@ -5100,7 +5370,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\nif (await mumu.isAndroidReady(0)) {\r\n  console.log(\"Android is booted on player 0\");\r\n}\r\n```"
+												"text": "```ts\nif (await mumu.isAndroidReady(0)) {\n  console.log(\"Android is booted on player 0\");\n}\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "State"
 											}
 										]
 									}
@@ -5109,9 +5388,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 597,
+									"line": 615,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L597"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L615"
 								}
 							],
 							"parameters": [
@@ -5163,9 +5442,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 972,
+							"line": 1014,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L972"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1014"
 						}
 					],
 					"signatures": [
@@ -5179,7 +5458,7 @@
 								"summary": [
 									{
 										"kind": "text",
-										"text": "Check if an app is installed on a player.\r\n\r\nUses "
+										"text": "Check if an app is installed on a player.\n\nUses "
 									},
 									{
 										"kind": "code",
@@ -5197,7 +5476,7 @@
 									},
 									{
 										"kind": "text",
-										"text": "\r\nwhich conflates \"not running\" with \"not installed.\""
+										"text": "\nwhich conflates \"not running\" with \"not installed.\""
 									}
 								],
 								"blockTags": [
@@ -5227,7 +5506,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\nif (await mumu.isAppInstalled(0, \"com.android.vending\")) {\r\n  console.log(\"Play Store is installed\");\r\n}\r\n```"
+												"text": "```ts\nif (await mumu.isAppInstalled(0, \"com.android.vending\")) {\n  console.log(\"Play Store is installed\");\n}\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Apps"
 											}
 										]
 									}
@@ -5236,9 +5524,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 972,
+									"line": 1014,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L972"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1014"
 								}
 							],
 							"parameters": [
@@ -5309,9 +5597,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 1523,
+							"line": 1591,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1523"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1591"
 						}
 					],
 					"signatures": [
@@ -5355,7 +5643,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\nif (await mumu.isAppRunning(0, \"com.example.app\")) {\r\n  console.log(\"App is running\");\r\n}\r\n```"
+												"text": "```ts\nif (await mumu.isAppRunning(0, \"com.example.app\")) {\n  console.log(\"App is running\");\n}\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Apps"
 											}
 										]
 									}
@@ -5364,9 +5661,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 1523,
+									"line": 1591,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1523"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1591"
 								}
 							],
 							"parameters": [
@@ -5439,9 +5736,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 579,
+							"line": 595,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L579"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L595"
 						}
 					],
 					"signatures": [
@@ -5485,7 +5782,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\nif (await mumu.isRunning(0)) {\r\n  console.log(\"Player 0 is running\");\r\n}\r\n```"
+												"text": "```ts\nif (await mumu.isRunning(0)) {\n  console.log(\"Player 0 is running\");\n}\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "State"
 											}
 										]
 									}
@@ -5494,9 +5800,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 579,
+									"line": 595,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L579"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L595"
 								}
 							],
 							"parameters": [
@@ -5548,9 +5854,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 1260,
+							"line": 1316,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1260"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1316"
 						}
 					],
 					"signatures": [
@@ -5582,7 +5888,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\n// Press the back button (keycode 4)\r\nawait mumu.keyEvent(0, 4);\r\n```"
+												"text": "```ts\n// Press the back button (keycode 4)\nawait mumu.keyEvent(0, 4);\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Input"
 											}
 										]
 									}
@@ -5591,9 +5906,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 1260,
+									"line": 1316,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1260"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1316"
 								}
 							],
 							"parameters": [
@@ -5682,9 +5997,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 696,
+							"line": 720,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L696"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L720"
 						}
 					],
 					"signatures": [
@@ -5716,7 +6031,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\n// Launch player 0\r\nawait mumu.launch(0);\r\n\r\n// Launch player 1 and auto-start an app\r\nawait mumu.launch(1, { package: \"com.example.app\" });\r\n\r\n// Launch all players\r\nawait mumu.launch(\"all\");\r\n```"
+												"text": "```ts\n// Launch player 0\nawait mumu.launch(0);\n\n// Launch player 1 and auto-start an app\nawait mumu.launch(1, { package: \"com.example.app\" });\n\n// Launch all players\nawait mumu.launch(\"all\");\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Window Control"
 											}
 										]
 									}
@@ -5725,9 +6049,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 696,
+									"line": 720,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L696"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L720"
 								}
 							],
 							"parameters": [
@@ -5818,9 +6142,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 530,
+							"line": 546,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L530"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L546"
 						}
 					],
 					"signatures": [
@@ -5834,7 +6158,7 @@
 								"summary": [
 									{
 										"kind": "text",
-										"text": "Launch a player and wait until Android has finished booting.\r\n\r\nCombines "
+										"text": "Launch a player and wait until Android has finished booting.\n\nCombines "
 									},
 									{
 										"kind": "inline-tag",
@@ -5872,7 +6196,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\nconst info = await mumu.launchAndWait(0, {\r\n  package: \"com.example.app\",\r\n  timeout: 90_000,\r\n});\r\nconsole.log(`Player 0 ready on ADB port ${info.adb_port}`);\r\n```"
+												"text": "```ts\nconst info = await mumu.launchAndWait(0, {\n  package: \"com.example.app\",\n  timeout: 90_000,\n});\nconsole.log(`Player 0 ready on ADB port ${info.adb_port}`);\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Waiting"
 											}
 										]
 									}
@@ -5881,9 +6214,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 530,
+									"line": 546,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L530"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L546"
 								}
 							],
 							"parameters": [
@@ -5969,9 +6302,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 810,
+							"line": 844,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L810"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L844"
 						}
 					],
 					"signatures": [
@@ -6013,7 +6346,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\nawait mumu.layoutWindow(0, {\r\n  posX: 100,\r\n  posY: 100,\r\n  sizeW: 800,\r\n  sizeH: 600,\r\n});\r\n```"
+												"text": "```ts\nawait mumu.layoutWindow(0, {\n  posX: 100,\n  posY: 100,\n  sizeW: 800,\n  sizeH: 600,\n});\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Window Control"
 											}
 										]
 									}
@@ -6022,9 +6364,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 810,
+									"line": 844,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L810"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L844"
 								}
 							],
 							"parameters": [
@@ -6112,9 +6454,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 991,
+							"line": 1035,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L991"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1035"
 						}
 					],
 					"signatures": [
@@ -6128,7 +6470,7 @@
 								"summary": [
 									{
 										"kind": "text",
-										"text": "List all installed app package IDs on a player.\r\n\r\nUses "
+										"text": "List all installed app package IDs on a player.\n\nUses "
 									},
 									{
 										"kind": "code",
@@ -6154,7 +6496,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\nconst apps = await mumu.listInstalledApps(0);\r\nconsole.log(apps); // [\"com.android.vending\", \"com.android.settings\", ...]\r\n```"
+												"text": "```ts\nconst apps = await mumu.listInstalledApps(0);\nconsole.log(apps); // [\"com.android.vending\", \"com.android.settings\", ...]\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Apps"
 											}
 										]
 									}
@@ -6163,9 +6514,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 991,
+									"line": 1035,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L991"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1035"
 								}
 							],
 							"parameters": [
@@ -6220,9 +6571,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 2056,
+							"line": 2146,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L2056"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L2146"
 						}
 					],
 					"signatures": [
@@ -6248,15 +6599,24 @@
 												"text": "Result with error status."
 											}
 										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Logging"
+											}
+										]
 									}
 								]
 							},
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 2056,
+									"line": 2146,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L2056"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L2146"
 								}
 							],
 							"type": {
@@ -6292,9 +6652,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 2047,
+							"line": 2135,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L2047"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L2135"
 						}
 					],
 					"signatures": [
@@ -6320,15 +6680,24 @@
 												"text": "Result with error status."
 											}
 										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Logging"
+											}
+										]
 									}
 								]
 							},
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 2047,
+									"line": 2135,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L2047"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L2135"
 								}
 							],
 							"type": {
@@ -6364,9 +6733,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 1220,
+							"line": 1272,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1220"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1272"
 						}
 					],
 					"signatures": [
@@ -6380,7 +6749,7 @@
 								"summary": [
 									{
 										"kind": "text",
-										"text": "Perform a long press at a screen coordinate.\r\n\r\nImplemented as a swipe from the same point to the same point."
+										"text": "Perform a long press at a screen coordinate.\n\nImplemented as a swipe from the same point to the same point."
 									}
 								],
 								"blockTags": [
@@ -6398,7 +6767,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\nawait mumu.longPress(0, 400, 300, 2000);\r\n```"
+												"text": "```ts\nawait mumu.longPress(0, 400, 300, 2000);\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Input"
 											}
 										]
 									}
@@ -6407,9 +6785,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 1220,
+									"line": 1272,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1220"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1272"
 								}
 							],
 							"parameters": [
@@ -6521,9 +6899,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 1270,
+							"line": 1328,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1270"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1328"
 						}
 					],
 					"signatures": [
@@ -6549,15 +6927,24 @@
 												"text": "Raw command output."
 											}
 										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Input"
+											}
+										]
 									}
 								]
 							},
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 1270,
+									"line": 1328,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1270"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1328"
 								}
 							],
 							"parameters": [
@@ -6611,9 +6998,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 1280,
+							"line": 1340,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1280"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1340"
 						}
 					],
 					"signatures": [
@@ -6639,15 +7026,24 @@
 												"text": "Result with error status."
 											}
 										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Input"
+											}
+										]
 									}
 								]
 							},
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 1280,
+									"line": 1340,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1280"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1340"
 								}
 							],
 							"parameters": [
@@ -6706,9 +7102,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 1501,
+							"line": 1571,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1501"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1571"
 						}
 					],
 					"signatures": [
@@ -6740,7 +7136,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\nawait mumu.pullFile(0, \"/sdcard/screenshot.png\", \"C:\\\\screenshots\\\\shot.png\");\r\n```"
+												"text": "```ts\nawait mumu.pullFile(0, \"/sdcard/screenshot.png\", \"C:\\\\screenshots\\\\shot.png\");\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "ADB & Shell"
 											}
 										]
 									}
@@ -6749,9 +7154,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 1501,
+									"line": 1571,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1501"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1571"
 								}
 							],
 							"parameters": [
@@ -6841,9 +7246,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 1484,
+							"line": 1552,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1484"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1552"
 						}
 					],
 					"signatures": [
@@ -6875,7 +7280,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\nawait mumu.pushFile(0, \"C:\\\\data\\\\config.json\", \"/sdcard/config.json\");\r\n```"
+												"text": "```ts\nawait mumu.pushFile(0, \"C:\\\\data\\\\config.json\", \"/sdcard/config.json\");\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "ADB & Shell"
 											}
 										]
 									}
@@ -6884,9 +7298,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 1484,
+									"line": 1552,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1484"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1552"
 								}
 							],
 							"parameters": [
@@ -6992,7 +7406,7 @@
 								"summary": [
 									{
 										"kind": "text",
-										"text": "Execute an arbitrary MuMuManager.exe command.\r\n\r\nEscape hatch for advanced users who need to run commands not yet\r\nwrapped by the library."
+										"text": "Execute an arbitrary MuMuManager.exe command.\n\nEscape hatch for advanced users who need to run commands not yet\nwrapped by the library."
 									}
 								],
 								"blockTags": [
@@ -7010,7 +7424,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\nconst result = await mumu.rawExec([\"version\"]);\r\nconsole.log(result.stdout);\r\n```"
+												"text": "```ts\nconst result = await mumu.rawExec([\"version\"]);\nconsole.log(result.stdout);\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Advanced"
 											}
 										]
 									}
@@ -7078,9 +7501,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 352,
+							"line": 360,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L352"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L360"
 						}
 					],
 					"signatures": [
@@ -7094,7 +7517,7 @@
 								"summary": [
 									{
 										"kind": "text",
-										"text": "Rename a player. The player must be stopped — renaming a running player\r\nwill not persist the new name."
+										"text": "Rename a player. The player must be stopped — renaming a running player\nwill not persist the new name."
 									}
 								],
 								"blockTags": [
@@ -7121,15 +7544,24 @@
 												"text": " If the player is currently running."
 											}
 										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Lifecycle"
+											}
+										]
 									}
 								]
 							},
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 352,
+									"line": 360,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L352"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L360"
 								}
 							],
 							"parameters": [
@@ -7200,9 +7632,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 733,
+							"line": 761,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L733"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L761"
 						}
 					],
 					"signatures": [
@@ -7228,15 +7660,24 @@
 												"text": "Array of results with error status per player."
 											}
 										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Window Control"
+											}
+										]
 									}
 								]
 							},
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 733,
+									"line": 761,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L733"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L761"
 								}
 							],
 							"parameters": [
@@ -7295,9 +7736,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 554,
+							"line": 572,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L554"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L572"
 						}
 					],
 					"signatures": [
@@ -7311,7 +7752,7 @@
 								"summary": [
 									{
 										"kind": "text",
-										"text": "Restart a player and wait until Android has finished booting.\r\n\r\nCombines "
+										"text": "Restart a player and wait until Android has finished booting.\n\nCombines "
 									},
 									{
 										"kind": "inline-tag",
@@ -7349,7 +7790,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\nconst info = await mumu.restartAndWait(0);\r\nconsole.log(\"Restarted and ready!\");\r\n```"
+												"text": "```ts\nconst info = await mumu.restartAndWait(0);\nconsole.log(\"Restarted and ready!\");\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Waiting"
 											}
 										]
 									}
@@ -7358,9 +7808,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 554,
+									"line": 572,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L554"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L572"
 								}
 							],
 							"parameters": [
@@ -7446,9 +7896,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 1835,
+							"line": 1919,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1835"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1919"
 						}
 					],
 					"signatures": [
@@ -7480,7 +7930,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\nawait mumu.setBrightness(0, 75);\r\n```"
+												"text": "```ts\nawait mumu.setBrightness(0, 75);\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Settings"
 											}
 										]
 									}
@@ -7489,9 +7948,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 1835,
+									"line": 1919,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1835"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1919"
 								}
 							],
 							"parameters": [
@@ -7562,9 +8021,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 1891,
+							"line": 1979,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1891"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1979"
 						}
 					],
 					"signatures": [
@@ -7578,7 +8037,7 @@
 								"summary": [
 									{
 										"kind": "text",
-										"text": "Set a custom GPU model string.\r\n\r\nAutomatically sets "
+										"text": "Set a custom GPU model string.\n\nAutomatically sets "
 									},
 									{
 										"kind": "code",
@@ -7612,7 +8071,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\nawait mumu.setCustomGpu(0, \"Adreno (TM) 630\");\r\n```"
+												"text": "```ts\nawait mumu.setCustomGpu(0, \"Adreno (TM) 630\");\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Settings"
 											}
 										]
 									}
@@ -7621,9 +8089,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 1891,
+									"line": 1979,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1891"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1979"
 								}
 							],
 							"parameters": [
@@ -7702,9 +8170,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 1859,
+							"line": 1945,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1859"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1945"
 						}
 					],
 					"signatures": [
@@ -7718,7 +8186,7 @@
 								"summary": [
 									{
 										"kind": "text",
-										"text": "Set custom CPU and memory allocation.\r\n\r\nAutomatically sets "
+										"text": "Set custom CPU and memory allocation.\n\nAutomatically sets "
 									},
 									{
 										"kind": "code",
@@ -7734,7 +8202,7 @@
 									},
 									{
 										"kind": "text",
-										"text": " and applies the\r\ncore count and memory values."
+										"text": " and applies the\ncore count and memory values."
 									}
 								],
 								"blockTags": [
@@ -7752,7 +8220,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\nawait mumu.setCustomPerformance(0, 4, 8);\r\n```"
+												"text": "```ts\nawait mumu.setCustomPerformance(0, 4, 8);\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Settings"
 											}
 										]
 									}
@@ -7761,9 +8238,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 1859,
+									"line": 1945,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1859"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1945"
 								}
 							],
 							"parameters": [
@@ -7853,9 +8330,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 1813,
+							"line": 1895,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1813"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1895"
 						}
 					],
 					"signatures": [
@@ -7887,7 +8364,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\nawait mumu.setFrameRate(0, 120);\r\n```"
+												"text": "```ts\nawait mumu.setFrameRate(0, 120);\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Settings"
 											}
 										]
 									}
@@ -7896,9 +8382,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 1813,
+									"line": 1895,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1813"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1895"
 								}
 							],
 							"parameters": [
@@ -7969,9 +8455,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 1797,
+							"line": 1877,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1797"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1877"
 						}
 					],
 					"signatures": [
@@ -8003,7 +8489,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\nawait mumu.setGpuMode(0, \"high\");\r\n```"
+												"text": "```ts\nawait mumu.setGpuMode(0, \"high\");\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Settings"
 											}
 										]
 									}
@@ -8012,9 +8507,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 1797,
+									"line": 1877,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1797"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1877"
 								}
 							],
 							"parameters": [
@@ -8097,9 +8592,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 1924,
+							"line": 2014,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1924"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L2014"
 						}
 					],
 					"signatures": [
@@ -8113,7 +8608,7 @@
 								"summary": [
 									{
 										"kind": "text",
-										"text": "Configure the network bridge settings in a single call.\r\n\r\nOnly the fields provided in the config will be set; omitted fields\r\nare left unchanged."
+										"text": "Configure the network bridge settings in a single call.\n\nOnly the fields provided in the config will be set; omitted fields\nare left unchanged."
 									}
 								],
 								"blockTags": [
@@ -8131,7 +8626,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\nawait mumu.setNetworkBridge(0, {\r\n  enabled: true,\r\n  ipMode: \"static\",\r\n  ipAddr: \"192.168.0.100\",\r\n  gateway: \"192.168.0.1\",\r\n  subnetMask: \"255.255.255.0\",\r\n  dns1: \"8.8.8.8\",\r\n  dns2: \"8.8.4.4\",\r\n});\r\n```"
+												"text": "```ts\nawait mumu.setNetworkBridge(0, {\n  enabled: true,\n  ipMode: \"static\",\n  ipAddr: \"192.168.0.100\",\n  gateway: \"192.168.0.1\",\n  subnetMask: \"255.255.255.0\",\n  dns1: \"8.8.8.8\",\n  dns2: \"8.8.4.4\",\n});\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Settings"
 											}
 										]
 									}
@@ -8140,9 +8644,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 1924,
+									"line": 2014,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1924"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L2014"
 								}
 							],
 							"parameters": [
@@ -8225,9 +8729,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 1778,
+							"line": 1856,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1778"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1856"
 						}
 					],
 					"signatures": [
@@ -8259,7 +8763,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\nawait mumu.setPerformanceMode(0, \"high\");\r\n```"
+												"text": "```ts\nawait mumu.setPerformanceMode(0, \"high\");\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Settings"
 											}
 										]
 									}
@@ -8268,9 +8781,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 1778,
+									"line": 1856,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1778"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1856"
 								}
 							],
 							"parameters": [
@@ -8353,9 +8866,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 1467,
+							"line": 1533,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1467"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1533"
 						}
 					],
 					"signatures": [
@@ -8387,7 +8900,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\nawait mumu.setProp(0, \"debug.layout\", \"true\");\r\n```"
+												"text": "```ts\nawait mumu.setProp(0, \"debug.layout\", \"true\");\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "ADB & Shell"
 											}
 										]
 									}
@@ -8396,9 +8918,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 1467,
+									"line": 1533,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1467"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1533"
 								}
 							],
 							"parameters": [
@@ -8490,9 +9012,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 1741,
+							"line": 1817,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1741"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1817"
 						}
 					],
 					"signatures": [
@@ -8506,7 +9028,7 @@
 								"summary": [
 									{
 										"kind": "text",
-										"text": "Set a custom display resolution.\r\n\r\nAutomatically sets "
+										"text": "Set a custom display resolution.\n\nAutomatically sets "
 									},
 									{
 										"kind": "code",
@@ -8522,7 +9044,7 @@
 									},
 									{
 										"kind": "text",
-										"text": " and applies the\r\nwidth, height, and DPI values."
+										"text": " and applies the\nwidth, height, and DPI values."
 									}
 								],
 								"blockTags": [
@@ -8540,7 +9062,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\nawait mumu.setResolution(0, 1920, 1080, 280);\r\n```"
+												"text": "```ts\nawait mumu.setResolution(0, 1920, 1080, 280);\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Settings"
 											}
 										]
 									}
@@ -8549,9 +9080,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 1741,
+									"line": 1817,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1741"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1817"
 								}
 							],
 							"parameters": [
@@ -8660,9 +9191,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 1628,
+							"line": 1700,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1628"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1700"
 						}
 					],
 					"signatures": [
@@ -8694,7 +9225,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\nawait mumu.setSetting({\r\n  vmindex: 0,\r\n  key: \"max_frame_rate\",\r\n  value: \"120\",\r\n});\r\n```"
+												"text": "```ts\nawait mumu.setSetting({\n  vmindex: 0,\n  key: \"max_frame_rate\",\n  value: \"120\",\n});\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Settings"
 											}
 										]
 									}
@@ -8703,9 +9243,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 1628,
+									"line": 1700,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1628"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1700"
 								}
 							],
 							"parameters": [
@@ -8769,9 +9309,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 1673,
+							"line": 1749,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1673"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1749"
 						}
 					],
 					"signatures": [
@@ -8797,15 +9337,24 @@
 												"text": "Raw command output."
 											}
 										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Settings"
+											}
+										]
 									}
 								]
 							},
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 1673,
+									"line": 1749,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1673"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1749"
 								}
 							],
 							"parameters": [
@@ -8869,9 +9418,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 1649,
+							"line": 1723,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1649"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1723"
 						}
 					],
 					"signatures": [
@@ -8885,7 +9434,7 @@
 								"summary": [
 									{
 										"kind": "text",
-										"text": "Set multiple setting key-value pairs in one call.\r\n\r\nValidates each entry before sending the command."
+										"text": "Set multiple setting key-value pairs in one call.\n\nValidates each entry before sending the command."
 									}
 								],
 								"blockTags": [
@@ -8897,15 +9446,24 @@
 												"text": "Raw command output."
 											}
 										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Settings"
+											}
+										]
 									}
 								]
 							},
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 1649,
+									"line": 1723,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1649"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1723"
 								}
 							],
 							"parameters": [
@@ -8969,9 +9527,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 1998,
+							"line": 2088,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1998"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L2088"
 						}
 					],
 					"signatures": [
@@ -9003,7 +9561,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\n// Set a custom IMEI\r\nawait mumu.setSimulation(0, \"imei\", \"123456789012345\");\r\n\r\n// Clear the simulated MAC address\r\nawait mumu.setSimulation(0, \"mac_address\", \"__null__\");\r\n```"
+												"text": "```ts\n// Set a custom IMEI\nawait mumu.setSimulation(0, \"imei\", \"123456789012345\");\n\n// Clear the simulated MAC address\nawait mumu.setSimulation(0, \"mac_address\", \"__null__\");\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Simulation"
 											}
 										]
 									}
@@ -9012,9 +9579,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 1998,
+									"line": 2088,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1998"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L2088"
 								}
 							],
 							"parameters": [
@@ -9126,9 +9693,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 1377,
+							"line": 1437,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1377"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1437"
 						}
 					],
 					"signatures": [
@@ -9142,7 +9709,7 @@
 								"summary": [
 									{
 										"kind": "text",
-										"text": "Run a shell command inside the player's Android OS.\r\n\r\nSupports the same built-in shortcuts as "
+										"text": "Run a shell command inside the player's Android OS.\n\nSupports the same built-in shortcuts as "
 									},
 									{
 										"kind": "inline-tag",
@@ -9168,7 +9735,7 @@
 									},
 									{
 										"kind": "text",
-										"text": ",\r\n"
+										"text": ",\n"
 									},
 									{
 										"kind": "code",
@@ -9194,7 +9761,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\nconst sdk = await mumu.shell(0, \"getprop ro.build.version.sdk\");\r\n```"
+												"text": "```ts\nconst sdk = await mumu.shell(0, \"getprop ro.build.version.sdk\");\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "ADB & Shell"
 											}
 										]
 									}
@@ -9203,9 +9779,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 1377,
+									"line": 1437,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1377"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1437"
 								}
 							],
 							"parameters": [
@@ -9278,9 +9854,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 1295,
+							"line": 1353,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1295"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1353"
 						}
 					],
 					"signatures": [
@@ -9306,15 +9882,24 @@
 												"text": "Result with error status per player."
 											}
 										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Shortcuts"
+											}
+										]
 									}
 								]
 							},
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 1295,
+									"line": 1353,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1295"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1353"
 								}
 							],
 							"parameters": [
@@ -9405,9 +9990,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 1318,
+							"line": 1378,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1318"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1378"
 						}
 					],
 					"signatures": [
@@ -9433,15 +10018,24 @@
 												"text": "Result with error status per player."
 											}
 										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Shortcuts"
+											}
+										]
 									}
 								]
 							},
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 1318,
+									"line": 1378,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1318"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1378"
 								}
 							],
 							"parameters": [
@@ -9500,9 +10094,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 752,
+							"line": 782,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L752"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L782"
 						}
 					],
 					"signatures": [
@@ -9516,7 +10110,7 @@
 								"summary": [
 									{
 										"kind": "text",
-										"text": "Bring a player window back from the background to the foreground.\r\n\r\nThe player must be running. This restores a window that was previously\r\nsent to the background via "
+										"text": "Bring a player window back from the background to the foreground.\n\nThe player must be running. This restores a window that was previously\nsent to the background via "
 									},
 									{
 										"kind": "inline-tag",
@@ -9553,15 +10147,24 @@
 												"text": " If the player is not running."
 											}
 										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Window Control"
+											}
+										]
 									}
 								]
 							},
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 752,
+									"line": 782,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L752"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L782"
 								}
 							],
 							"parameters": [
@@ -9618,9 +10221,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 718,
+							"line": 744,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L718"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L744"
 						}
 					],
 					"signatures": [
@@ -9646,15 +10249,24 @@
 												"text": "Array of results with error status per player."
 											}
 										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Window Control"
+											}
+										]
 									}
 								]
 							},
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 718,
+									"line": 744,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L718"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L744"
 								}
 							],
 							"parameters": [
@@ -9713,9 +10325,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 431,
+							"line": 445,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L431"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L445"
 						}
 					],
 					"signatures": [
@@ -9729,7 +10341,7 @@
 								"summary": [
 									{
 										"kind": "text",
-										"text": "Layout/sort all player windows on screen.\r\n\r\n**Warning:** This command may hang if one or more player windows are\r\nminimized when it runs. By default, "
+										"text": "Layout/sort all player windows on screen.\n\n**Warning:** This command may hang if one or more player windows are\nminimized when it runs. By default, "
 									},
 									{
 										"kind": "code",
@@ -9745,7 +10357,7 @@
 									},
 									{
 										"kind": "text",
-										"text": " and the\r\ncommand will be silently killed after 3 seconds to prevent indefinite\r\nblocking. Set "
+										"text": " and the\ncommand will be silently killed after 3 seconds to prevent indefinite\nblocking. Set "
 									},
 									{
 										"kind": "code",
@@ -9761,7 +10373,7 @@
 									},
 									{
 										"kind": "text",
-										"text": " to wait for the command to\r\ncomplete normally."
+										"text": " to wait for the command to\ncomplete normally."
 									}
 								],
 								"blockTags": [
@@ -9773,15 +10385,24 @@
 												"text": "Raw command output (may be empty if the command was killed)."
 											}
 										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Lifecycle"
+											}
+										]
 									}
 								]
 							},
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 431,
+									"line": 445,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L431"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L445"
 								}
 							],
 							"parameters": [
@@ -9835,9 +10456,9 @@
 													"sources": [
 														{
 															"fileName": "src/mumu.ts",
-															"line": 431,
+															"line": 445,
 															"character": 24,
-															"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L431"
+															"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L445"
 														}
 													],
 													"type": {
@@ -9887,9 +10508,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 1191,
+							"line": 1241,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1191"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1241"
 						}
 					],
 					"signatures": [
@@ -9921,7 +10542,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\n// Swipe right\r\nawait mumu.swipe(0, 100, 500, 600, 500, 200);\r\n```"
+												"text": "```ts\n// Swipe right\nawait mumu.swipe(0, 100, 500, 600, 500, 200);\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Input"
 											}
 										]
 									}
@@ -9930,9 +10560,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 1191,
+									"line": 1241,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1191"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1241"
 								}
 							],
 							"parameters": [
@@ -10082,9 +10712,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 1170,
+							"line": 1218,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1170"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1218"
 						}
 					],
 					"signatures": [
@@ -10116,7 +10746,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\nawait mumu.tap(0, 400, 300);\r\n```"
+												"text": "```ts\nawait mumu.tap(0, 400, 300);\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Input"
 											}
 										]
 									}
@@ -10125,9 +10764,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 1170,
+									"line": 1218,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1170"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1218"
 								}
 							],
 							"parameters": [
@@ -10219,9 +10858,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 1056,
+							"line": 1100,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1056"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1100"
 						}
 					],
 					"signatures": [
@@ -10244,7 +10883,7 @@
 										"content": [
 											{
 												"kind": "text",
-												"text": "Raw command output.\r\n\r\n**Note:** MuMuManager requires "
+												"text": "Raw command output.\n\n**Note:** MuMuManager requires "
 											},
 											{
 												"kind": "code",
@@ -10252,7 +10891,7 @@
 											},
 											{
 												"kind": "text",
-												"text": " to be present. Passing only\r\n"
+												"text": " to be present. Passing only\n"
 											},
 											{
 												"kind": "code",
@@ -10277,7 +10916,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\n// Tap at (400, 300)\r\nawait mumu.toolCmd(0, { cmd: \"input tap 400 300\" });\r\n\r\n// Type text into the focused field\r\nawait mumu.toolCmd(0, { cmd: \"input_text\", text: \"hello\" });\r\n\r\n// Press the back button\r\nawait mumu.toolCmd(0, { cmd: \"input keyevent 4\" });\r\n```"
+												"text": "```ts\n// Tap at (400, 300)\nawait mumu.toolCmd(0, { cmd: \"input tap 400 300\" });\n\n// Type text into the focused field\nawait mumu.toolCmd(0, { cmd: \"input_text\", text: \"hello\" });\n\n// Press the back button\nawait mumu.toolCmd(0, { cmd: \"input keyevent 4\" });\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Tools"
 											}
 										]
 									}
@@ -10286,9 +10934,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 1056,
+									"line": 1100,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1056"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1100"
 								}
 							],
 							"parameters": [
@@ -10373,9 +11021,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 1079,
+							"line": 1125,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1079"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1125"
 						}
 					],
 					"signatures": [
@@ -10401,15 +11049,24 @@
 												"text": "Result with error status per player."
 											}
 										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Tools"
+											}
+										]
 									}
 								]
 							},
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 1079,
+									"line": 1125,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1079"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1125"
 								}
 							],
 							"parameters": [
@@ -10487,9 +11144,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 1022,
+							"line": 1064,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1022"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1064"
 						}
 					],
 					"signatures": [
@@ -10521,7 +11178,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\n// Take a screenshot\r\nawait mumu.toolFunc(0, \"screenshot\");\r\n\r\n// Rotate the screen\r\nawait mumu.toolFunc(0, \"rotate\");\r\n\r\n// Go home\r\nawait mumu.toolFunc(0, \"go_home\");\r\n```"
+												"text": "```ts\n// Take a screenshot\nawait mumu.toolFunc(0, \"screenshot\");\n\n// Rotate the screen\nawait mumu.toolFunc(0, \"rotate\");\n\n// Go home\nawait mumu.toolFunc(0, \"go_home\");\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Tools"
 											}
 										]
 									}
@@ -10530,9 +11196,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 1022,
+									"line": 1064,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1022"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1064"
 								}
 							],
 							"parameters": [
@@ -10622,9 +11288,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 1132,
+							"line": 1182,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1132"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1182"
 						}
 					],
 					"signatures": [
@@ -10650,15 +11316,24 @@
 												"text": "Result with error status per player."
 											}
 										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Tools"
+											}
+										]
 									}
 								]
 							},
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 1132,
+									"line": 1182,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1132"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1182"
 								}
 							],
 							"parameters": [
@@ -10774,9 +11449,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 1105,
+							"line": 1153,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1105"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1153"
 						}
 					],
 					"signatures": [
@@ -10808,7 +11483,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\n// Set location to San Francisco\r\nawait mumu.toolLocation(0, -122.4194, 37.7749);\r\n```"
+												"text": "```ts\n// Set location to San Francisco\nawait mumu.toolLocation(0, -122.4194, 37.7749);\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Tools"
 											}
 										]
 									}
@@ -10817,9 +11501,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 1105,
+									"line": 1153,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1105"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L1153"
 								}
 							],
 							"parameters": [
@@ -10932,9 +11616,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 243,
+							"line": 241,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L243"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L241"
 						}
 					],
 					"signatures": [
@@ -10960,15 +11644,24 @@
 												"text": "The version string reported by MuMuManager."
 											}
 										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Lifecycle"
+											}
+										]
 									}
 								]
 							},
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 243,
+									"line": 241,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L243"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L241"
 								}
 							],
 							"type": {
@@ -10999,9 +11692,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 462,
+							"line": 474,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L462"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L474"
 						}
 					],
 					"signatures": [
@@ -11015,7 +11708,7 @@
 								"summary": [
 									{
 										"kind": "text",
-										"text": "Wait until a player's Android OS has finished booting.\r\n\r\nPolls "
+										"text": "Wait until a player's Android OS has finished booting.\n\nPolls "
 									},
 									{
 										"kind": "inline-tag",
@@ -11041,7 +11734,7 @@
 									},
 									{
 										"kind": "text",
-										"text": ", then returns\r\nthe full running info object."
+										"text": ", then returns\nthe full running info object."
 									}
 								],
 								"blockTags": [
@@ -11074,7 +11767,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\nawait mumu.launch(0);\r\nconst info = await mumu.waitForBoot(0, { timeout: 60_000 });\r\nconsole.log(\"Booted!\", info.adb_port);\r\n```"
+												"text": "```ts\nawait mumu.launch(0);\nconst info = await mumu.waitForBoot(0, { timeout: 60_000 });\nconsole.log(\"Booted!\", info.adb_port);\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Waiting"
 											}
 										]
 									}
@@ -11083,9 +11785,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 462,
+									"line": 474,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L462"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L474"
 								}
 							],
 							"parameters": [
@@ -11171,9 +11873,9 @@
 					"sources": [
 						{
 							"fileName": "src/mumu.ts",
-							"line": 497,
+							"line": 511,
 							"character": 8,
-							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L497"
+							"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L511"
 						}
 					],
 					"signatures": [
@@ -11187,7 +11889,7 @@
 								"summary": [
 									{
 										"kind": "text",
-										"text": "Wait until a player has fully shut down.\r\n\r\nPolls "
+										"text": "Wait until a player has fully shut down.\n\nPolls "
 									},
 									{
 										"kind": "inline-tag",
@@ -11237,7 +11939,16 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\r\nawait mumu.shutdown(0);\r\nawait mumu.waitForShutdown(0);\r\nconsole.log(\"Player 0 is fully stopped.\");\r\n```"
+												"text": "```ts\nawait mumu.shutdown(0);\nawait mumu.waitForShutdown(0);\nconsole.log(\"Player 0 is fully stopped.\");\n```"
+											}
+										]
+									},
+									{
+										"tag": "@category",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Waiting"
 											}
 										]
 									}
@@ -11246,9 +11957,9 @@
 							"sources": [
 								{
 									"fileName": "src/mumu.ts",
-									"line": 497,
+									"line": 511,
 									"character": 8,
-									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L497"
+									"url": "https://github.com/PiratePeep/mumuplayer/blob/main/src/mumu.ts#L511"
 								}
 							],
 							"parameters": [
@@ -11413,6 +12124,163 @@
 						32,
 						64,
 						68
+					]
+				}
+			],
+			"categories": [
+				{
+					"title": "Lifecycle",
+					"children": [
+						40,
+						37,
+						44,
+						55,
+						34,
+						51,
+						47,
+						59,
+						32
+					]
+				},
+				{
+					"title": "Waiting",
+					"children": [
+						72,
+						76,
+						64,
+						68
+					]
+				},
+				{
+					"title": "State",
+					"children": [
+						90,
+						93,
+						86,
+						88,
+						83,
+						80
+					]
+				},
+				{
+					"title": "Window Control",
+					"children": [
+						108,
+						95,
+						111,
+						102,
+						105,
+						99
+					]
+				},
+				{
+					"title": "Apps",
+					"children": [
+						127,
+						131,
+						115,
+						123,
+						248,
+						119,
+						245,
+						135,
+						241,
+						139
+					]
+				},
+				{
+					"title": "Input",
+					"children": [
+						184,
+						188,
+						178,
+						192,
+						195,
+						170,
+						165
+					]
+				},
+				{
+					"title": "Tools",
+					"children": [
+						146,
+						150,
+						142,
+						159,
+						154
+					]
+				},
+				{
+					"title": "Shortcuts",
+					"children": [
+						198,
+						202
+					]
+				},
+				{
+					"title": "ADB & Shell",
+					"children": [
+						205,
+						216,
+						219,
+						213,
+						222,
+						236,
+						231,
+						226,
+						209
+					]
+				},
+				{
+					"title": "Settings",
+					"children": [
+						252,
+						264,
+						285,
+						294,
+						289,
+						281,
+						277,
+						298,
+						273,
+						267,
+						255,
+						261,
+						258
+					]
+				},
+				{
+					"title": "Simulation",
+					"children": [
+						302,
+						306
+					]
+				},
+				{
+					"title": "Drivers",
+					"children": [
+						311,
+						314
+					]
+				},
+				{
+					"title": "Logging",
+					"children": [
+						319,
+						317
+					]
+				},
+				{
+					"title": "Advanced",
+					"children": [
+						6,
+						29
+					]
+				},
+				{
+					"title": "Other",
+					"children": [
+						2
 					]
 				}
 			],
