@@ -1,4 +1,4 @@
-# mumuplayer v1.0.1
+# mumuplayer v1.0.2
 
 ## Classes
 
